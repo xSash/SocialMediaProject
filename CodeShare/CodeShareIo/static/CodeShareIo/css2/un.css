@@ -1,0 +1,197 @@
+.x-searchform-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-color: rgba(245,248,250, 0.925);
+    -webkit-transition: top 0.3s ease;
+    transition: top 0.3s ease
+}
+.x-searchform-overlay.in {
+    display: table
+}
+.x-searchform-overlay .form-search {
+    padding-bottom: 2em;
+    font-size: 10px
+}
+.x-searchform-overlay .form-search:before {
+    display: none
+}
+.x-searchform-overlay .form-search label {
+    margin-bottom: 0.85em;
+    font-size: 2.1em;
+    line-height: 1.4;
+    color: #f5f8fa;
+}
+.x-searchform-overlay .form-search .search-query {
+    border: 0;
+    padding: 0;
+    height: auto;
+    font-size: 6.4em;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: #7ca4c0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none
+}
+.x-searchform-overlay .form-search .search-query:focus,
+.x-searchform-overlay .form-search .search-query:active {
+    outline: 0
+}
+@media (max-width: 767px) {
+    .x-searchform-overlay .form-search {
+        font-size: 8px
+    }
+}
+@media (max-width: 480px) {
+    .x-searchform-overlay .form-search {
+        font-size: 6px
+    }
+}
+.x-searchform-overlay-inner {
+    display: table-cell;
+    vertical-align: middle
+}
+.x-container {
+    margin: 0 auto
+}
+.x-container:before,
+.x-container:after {
+    content: " ";
+    display: table
+}
+.x-container:after {
+    clear: both
+}
+.x-container.max {
+    max-width: 1200px
+}
+.x-container.width {
+    width: 88%
+}
+
+.form-search,
+.widget_product_search form {
+    position: relative;
+    margin-bottom: 0;
+    line-height: 1
+}
+.form-search:before,
+.widget_product_search form:before {
+    content: "\f002";
+    position: absolute;
+    left: 16px;
+    bottom: 50%;
+    display: block;
+    margin-bottom: -6px;
+    font-size: 12px;
+    line-height: 1;
+    text-decoration: inherit;
+    text-shadow: none;
+    color: #7a7a7a;
+    font-family: "FontAwesome" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    text-decoration: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.form-search .search-query,
+.form-search input[type="search"],
+.widget_product_search form .search-query,
+.widget_product_search form input[type="search"] {
+    width: 100%;
+    margin-bottom: 0;
+    padding-left: 38px
+}
+.wpcf7 p {
+    margin-bottom: .5375em
+}
+.center-text {
+    text-align: center
+}
+@media (min-width: 1200px) {
+    .x-hide-xl {
+        display: none !important
+    }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+    .x-hide-lg {
+        display: none !important
+    }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .x-hide-md {
+        display: none !important
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    .x-hide-sm {
+        display: none !important
+    }
+}
+@media (max-width: 480px) {
+    .x-hide-xs {
+        display: none !important
+    }
+}
+.x-visible-phone {
+    display: none !important
+}
+.x-visible-tablet {
+    display: none !important
+}
+.x-visible-desktop {
+    display: inherit !important
+}
+span.x-visible-desktop {
+    display: inline !important
+}
+.x-hidden-desktop {
+    display: none !important
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .x-visible-tablet {
+        display: inherit !important
+    }
+    span.x-visible-tablet {
+        display: inline !important
+    }
+    .x-hidden-tablet {
+        display: none !important
+    }
+    .x-hidden-desktop {
+        display: inherit !important
+    }
+    span.x-hidden-desktop {
+        display: inline !important
+    }
+    .x-visible-desktop {
+        display: none !important
+    }
+}
+@media (max-width: 767px) {
+    .x-visible-phone {
+        display: inherit !important
+    }
+    span.x-visible-phone {
+        display: inline !important
+    }
+    .x-hidden-phone {
+        display: none !important
+    }
+    .x-hidden-desktop {
+        display: inherit !important
+    }
+    span.x-hidden-desktop {
+        display: inline !important
+    }
+    .x-visible-desktop {
+        display: none !important
+    }
+}
