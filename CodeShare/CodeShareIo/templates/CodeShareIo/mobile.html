@@ -1,0 +1,237 @@
+{% extends 'CodeShareIo/base.html'%}
+{% load static %}
+{% block title %}CodeShare - Application{% endblock %}
+{% block mobile %}<link rel="stylesheet" href="{% static 'CodeShareIo/index/css/mobile.css' %}"/>{% endblock %}
+{% block preloader %}
+{% endblock %}
+{% block body %}
+    <div id="wrapper">
+      <main id="main">
+        <section class="hero">
+          <div class="app-container container-fluid">
+            <div class="app-container-wrapper">
+              <div class="row">
+                <div class="col-sm-5 col-xs-12">
+                  <div class="phone-container">
+                    <img src="{% static 'CodeShareIo/images/bg-header-slider.png' %}" class="frame-image"/>
+                    <div id="carousel" class="carousel fade" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="item active">
+                        <img src="{% static 'CodeShareIo/images/phoneframe2.jpg' %}" alt=""/></div>
+                        <div class="item"><img src="{% static 'CodeShareIo/images/inner1.jpg' %}" alt=""/></div>
+                        <div class="item"><img src="{% static 'CodeShareIo/images/inner2.jpg' %}" alt=""/></div>
+                        <div class="item"><img src="{% static 'CodeShareIo/images/inner3.jpg' %}" alt=""/></div>
+                        <div class="item"><img src="{% static 'CodeShareIo/images/inner4.jpg' %}" alt=""/></div>
+                        <div class="item"><img src="{% static 'CodeShareIo/images/inner5.jpg' %}" alt=""/></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-7 col-xs-12">
+                  <div class="app-content">
+                    <h2 class="app-name app-field">CodeShare</h2>
+                    <h1 class="tag-line app-field">Add text here</h1>
+                    <div class="description app-field">
+                      <p>Generate your own two-dimension code information<br />Can be generated two-dimension code information sharing<br />Support（sina micro bo, tencent micro bo, micro letter, email, instant message, save to the photo album, print, Facebook, Twitter）share<br />Support barcode, two-dimensional code read, identify and share</p>
+                    </div>
+                    <div>
+                     <a class="app-link" id="appleLink" href="#">
+                      <img class="app-icon" src="{% static 'CodeShareIo/images/app-store-badge.svg' %}"/>
+                    </a>
+                     <a class="app-link" id="googleLink" href="#">
+                      <img class="app-icon" src="{% static 'CodeShareIo/images/google-play-badge.svg'%}"/>
+                     </a>
+                   </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+        <!--/ iphone features -->
+    <section id="iphone-feature">
+    
+        <div class="container">
+        
+            <div class="row">
+            
+                <div class="col-md-5 col-md-offset-7">
+                
+                    <h2>Get a great web interface using oppo</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing labore et dolore magna aliqua. 
+                       Excepteur sint occaecat cupidatat non proident laborum.
+                    </p>
+                    <ul class="clearlist rightList">
+                        <li>
+                           <i class="fa fa-check"></i>
+                           <span>Clean & elegant design</span></li>
+
+                        <li>
+                           <i class="fa fa-check"></i>
+                           <span>Beautiful & simple layout</span></li>
+
+                        <li>
+                           <i class="fa fa-check"></i>
+                           <span>Great user interaction</span></li>
+
+                    </ul>
+                    <div class="btns-container">
+                         <a href="#" class="btn btn-blue">Ready to join us <i class="fa fa-arrow-right"></i></a>
+                         <a href="#" class="btn">Learn More</a>
+                    </div>
+                    
+                </div>
+
+                <div class="iphone-showcase wow fadeInLeft">
+                     
+                     <div class="device">
+                        <img src="{% static 'CodeShareIo/images/iphone-feature.png' %}" alt="">
+                     </div>
+                </div>
+              <!--/ iphone showcase -->
+            </div>
+            
+        </div>
+        
+    </section>
+    <!--/ iphone feature-->
+<!--/ features -->
+    <section id="mobile-app">
+    
+        <div class="container">
+        
+            <div class="row">
+            
+                <div class="col-md-12 text-center">
+                    <h2>Mobile Application</h2>
+                    <p class="subtitle">CodeShare exquisite features</p>
+                </div>
+                
+            </div>
+        
+            <div class="row b-pad50">
+            
+                <div class="col-md-4 feature-item">
+                    <div class="feature wow fadeInLeft">
+                        <div class="f-icon left"><i class="lnr lnr-smartphone"></i>
+                        </div>
+                        <div class="f-description">
+                            <h4>Fully Resposive & Retina Ready</h4>
+                            <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat  sunt culpa qui officia. </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature wow fadeInLeft" data-wow-delay=".1s">
+                        <div class="f-icon left"><i class="lnr lnr-rocket"></i>
+                        </div>
+                        <div class="f-description">
+                            <h4>Dynamic & Extra Efficient</h4>
+                            <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat  sunt culpa qui officia. </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature wow fadeInLeft" data-wow-delay=".2s">
+                        <div class="f-icon left"><i class="lnr lnr-diamond"></i>
+                        </div>
+                        <div class="f-description">
+                            <h4>Comprehensive & Well Documented</h4>
+                           <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat  sunt culpa qui officia. </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-center">
+                    <div class="wow fadeInUp" data-wow-delay=".2s">
+                         <img class="wow fadeInUp" src="{% static 'CodeShareIo/images/iphone.png' %}" alt="" data-wow-delay=".3s">
+                    </div>
+                </div>
+                
+                <div class="col-md-4 feature-item">
+                
+                    <div class="feature wow fadeInRight">
+                        <div class="f-icon left"><i class="lnr lnr-download"></i>
+                        </div>
+                        <div class="f-description">
+                            <h4>Free Updates & Download </h4>
+                            <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat  sunt culpa qui officia. </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature wow fadeInRight" data-wow-delay=".1s">
+                        <div class="f-icon left"><i class="lnr lnr-earth"></i>
+                        </div>
+                        <div class="f-description">
+                            <h4>Cross Browser Integration</h4>
+                           <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat  sunt culpa qui officia. </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature wow fadeInRight" data-wow-delay=".2s">
+                        <div class="f-icon left"><i class="lnr lnr-clock"></i>
+                        </div>
+                        <div class="f-description">
+                            <h4>Dedicated Support <br> System</h4>
+                            <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat  sunt culpa qui officia. </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+    <!-- get app -->
+    <section id="ready-to-buy">
+        <div class="container">
+        
+            <div class="row">
+
+                <div class="col-md-12 text-center">
+                
+                    <h2 style="padding-bottom: 50px;color: #fff;">CodeShare is coming to the world of mobile application soon!!</h2>
+                    <div class="clear"></div>
+                    <div id="countdown"></div>
+                    <form action="#">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email here">
+                            <a href="#" class="btn btn-green">Notify me! <i class="fa fa-arrow-right"></i></a>                        
+                        </div>
+                   </form>
+                   
+                    <p class="subtitle" style="color: #fff;">Supported platforms</p>
+                    
+                    <div class="download-btn">
+                        <a href="#">
+                           <i class="fa fa-apple" aria-hidden="true"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fa fa-android" aria-hidden="true"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fa fa-windows" aria-hidden="true"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fa fa-chrome" aria-hidden="true"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fa fa-firefox" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+    <!--/ get app -->
+{% endblock %}
+{% block newletter %}
+{% endblock %}
+  {% block newletterScript %}
+  {% endblock %}

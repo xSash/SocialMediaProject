@@ -1,0 +1,31 @@
+{% for obj in chat %}
+              {% if obj.user == request.user %}
+        <li class="qf b aml">
+          <div class="dropdown" style="float: right;margin-top: -10px;margin-right: -15px;">
+    <button class="btn btn-primary1 dropdown-toggle" type="button" data-toggle="dropdown">
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Delete</a></li>
+      <li><a href="#">Share</a></li>
+      <li><a href="#">Edit</a></li>
+    </ul>
+  </div>
+          <a class="qj" href="#">
+            <img
+              class="qh cu"
+              src="{{ obj.user.users.user_profile_picture.url }}">
+          </a>
+          <div class="qg">
+            <div class="aoc">
+              <div class="qn">
+                <small class="eg dp">{{ obj.pub_date }}</small>
+                <div style="margin-top: -20px;display: inline-flex;"><h5 style="margin-right: 5px;">{{ obj.user.first_name }} •</h5><h6 style="color: #9da9b0;font-size: 15px;font-weight: 100;">{{ obj.user.username }}</h6></div>
+              </div>
+              <p>
+                {{ obj.content }}
+              </p>
+            </div>
+          </div>
+        </li>
+              {% endif %}
+{% endfor %}

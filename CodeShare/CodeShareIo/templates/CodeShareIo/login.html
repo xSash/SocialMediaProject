@@ -1,0 +1,54 @@
+{% extends 'CodeShareIo/baseLogin.html' %}
+{% load static %}
+{% block customCss %}<link href="{% static 'CodeShareIo/login/cssLogin/style.css' %}" rel="stylesheet">{% endblock %}
+{% block body%}
+    <div class="gb ut">
+      <div class="uv">
+        <form role="form" method="post" action="" class="alq dj j" autocomplete="off">
+            {% csrf_token %}
+          <a href="{% url 'CodeShareIo:index' %}" class="l amb">
+          <img src="{% static 'CodeShareIo/images/logo.png' %}" alt="brand">
+          </a>
+          <p>Login in to CodeShare</p>
+          <div class="et">
+            <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+          </div>
+          <div class="et">
+            <input name="password" id="password" type="password" class="form-control" placeholder="Password"><br>
+            <input type="checkbox" name="remember" placeholder=""> Remember me
+          </div>
+          <div class="amb">
+            <button type=submit id="createAccount" class="btn cg fp" onclick="log()">Login</button>
+            <button class="btn fm" id="sign" data-href="{% url 'CodeShareIo:register' %}">Sign up</button>
+          </div>
+          <p id="verification"></p>
+          <footer class="apd">
+            <a href="{% url 'CodeShareIo:resetPassword' %}" class="dp">Forgot password</a><br>
+              {% if user.is_authenticated %}
+              <a>Connected as : {{ user.username }}</a>
+              {% endif %}
+          </footer>
+        </form>
+      </div>
+    </div>
+{% endblock %}
+{% block customScripts %}
+    <script>
+    function log(){
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+        console.log(username + " || " + password);
+        if(username == null || username == "" || password == null || password == ""){
+           console.log("true");
+           $('#verification').text("username or password is incorrect");
+           document.getElementById("verification").style.color = "#FF3838";
+
+        }
+        else{
+          console.log("false");
+          $('#verification').text("");
+        }
+
+    }
+    </script>
+{% endblock %}

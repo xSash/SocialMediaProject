@@ -1,0 +1,210 @@
+{% extends 'CodeShareIo/baseProfile.html' %}
+{% load static %}
+{% block feed %}
+
+<div class="ans dj"
+     style="background-image: url({{ user.users.user_banner_picture.url }});">
+  <div class="by">
+    <div class="ant">
+      <img class="cu qh" src="{{ user.users.user_profile_picture.url }}">
+      <h3 class="anv">{{ user.first_name }} {{ user.last_name }}</h3>
+      <p class="anu">
+        {{ user.users.bio }}
+      </p>
+
+      <ul class="aoi" style="color: #fff;">
+            <li class="aoj">
+              <a href="#userModal" class="aku" data-toggle="modal">
+                Followers
+                <h5 class="ali">587K</h5>
+              </a>
+            </li>
+            <li class="aoj">
+              <a href="#userModal" class="aku" data-toggle="modal">
+                Following
+                <h5 class="ali">500</h5>
+              </a>
+            </li>
+            <li class="aoj">
+              <a href="#userModal" class="aku" data-toggle="modal">
+                Post
+                <h5 class="ali">{{ num_of_post }}</h5>
+              </a>
+            </li>
+          </ul>
+    </div>
+  </div>
+
+  <nav class="anw">
+    <ul class="nav ol">
+      <li class="active">
+        <a href="#">Posts</a>
+      </li>
+      <li>
+        <a href="#">Pictures</a>
+      </li>
+      <li>
+        <a href="#">Edit</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- ========================================= USER INFO ================================================== -->
+<div class="cd fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="d">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Users</h4>
+      </div>
+
+      <div class="modal-body amf">
+        <div class="uq">
+          <ul class="qo cj ca">
+            <li class="b">
+              <div class="qf">
+                <a class="qj" href="#">
+                  <img class="qh cu" src="images/alex.jpg">
+                </a>
+                <div class="qg">
+                  <button class="cg fm fx eg">
+                    <span class="c aol"></span> Follow
+                  </button>
+                  <strong>Jacob Thornton</strong>
+                  <p>@fat - San Francisco</p>
+                </div>
+              </div>
+            </li>
+            <li class="b">
+              <div class="qf">
+                <a class="qj" href="#">
+                  <img class="qh cu" src="images/jeremi.jpg">
+                </a>
+                <div class="qg">
+                  <button class="cg fm fx eg">
+                    <span class="c aol"></span> Follow
+                  </button>
+                  <strong>Dave Gamache</strong>
+                  <p>@dhg - Palo Alto</p>
+                </div>
+              </div>
+            </li>
+            <li class="b">
+              <div class="qf">
+                <a class="qj" href="#">
+                  <img class="qh cu" src="images/kptcheez.jpg">
+                </a>
+                <div class="qg">
+                  <button class="cg fm fx eg">
+                    <span class="c aol"></span> Follow
+                  </button>
+                  <strong>Mark Otto</strong>
+                  <p>@mdo - San Francisco</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="by amt">
+  <div class="gc">
+    <div class="gn">
+       <div class="qv rc sm sp">
+        <div class="qw">
+          <h5 class="ald">About <small>· <a href="#">Edit</a></small></h5>
+          <ul class="eb tb">
+            <li><i class="fa fa-users dp all" aria-hidden="true"></i>Became friends with <a href="#">Jessica</a>
+            <li><i class="fa fa-briefcase dp all" aria-hidden="true"></i>Worked at <a href="#">TeamAhuntsic</a>
+            <li><i class="fa fa-globe dp all" aria-hidden="true"></i>Lives in <a href="#">{{ user.users.city }}</a>
+            <li><i class="fa fa-map-marker dp all" aria-hidden="true"></i>From <a href="#">{{ user.users.country }}</a>
+            <li><i class="fa fa-map-marker dp all" aria-hidden="true"></i>Birthdate <a href="#">{{ user.users.birthday }}</a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qv rc sm sp">
+        <div class="qw">
+          <h5 class="ald">Trending <small>· <a href="#">Change</a></small></h5>
+          <ul class="eb tb">
+            <li><a href="#">#CodeShare</a>
+            <li><a href="#">TeamAhuntsic</a>
+            <li><a href="#">#USA</a>
+            <li><a href="#">#Montreal</a>
+            <li><a href="#">#LearnToCode</a>
+            <li><a href="#">#Java</a>
+            <li><a href="#">#2017</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+<!-- ========================================= END USERS INFO ================================================== -->
+
+<!-- ========================================= FEED ================================================== -->
+
+    <div class="gz" style="margin-top: -20px;">
+      <ul class="ca qo anx">
+        <li class="qf b aml">
+            <ul class="post-types" style="display: inline-flex;">
+        <li class="post-type" style="margin-right: 10px;">
+          <a class="status" title="" href="#"><i class="icon icon-file"></i> Share an Update</a>
+        </li>
+        <li class="post-type">
+          <a class="photos" href="#"><i class="icon icon-camera"></i> Add photos</a>
+        </li>
+      </ul>
+            {% with name=user.username %}
+
+      <form id="chat-form" method="POST" action="/CodeShareIo/PostChat/" autocomplete="off">
+          <div class="input-group">
+            <input type="text" id="chat-msg" name="chat-msg" class="form-control post" placeholder="Write a post">
+            <div class="fj">
+              <button type="button" class="cg fm" name="">
+                <i class="fa fa-file-text" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="cg fm">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+            <div class="input-group">
+                <select name="privacy" class="form-control post">
+                    <option value="1" selected="selected">Public</option>
+                    <option value="2">Only my friends</option>
+                    <option value="3">Only me</option>
+                </select>
+                <div class="fj">
+              <button id="send" type="submit" class="btn btn-primary cg fm" style="padding-right: 25px;padding-left: 25px;padding-top: 7px;margin-top: 9px;">
+                Post
+              </button>
+            </div>
+          </div>
+      </form>
+            {% endwith %}
+        </li>
+
+      <ul id="msg-list" class="list-group">
+
+      </ul>
+      </ul>
+            <div class="qz" style="margin-top: -20px;text-align: center;background-color: #f5f8fa;border-top: 1px solid #d3e0e9;border-left: 1px solid #d3e0e9;border-right: 1px solid #d3e0e9;border-bottom: 1px solid #d3e0e9;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border-top-right-radius: 2px;border-top-left-radius: 2px;">
+          <div id="wrapperBottom"><img id="bottomImage" src="{% static 'CodeShareIo/images/bottom.png' %}" style="width: 35px;"></div>
+        </div>
+    </div>
+<div id="chat-body" class="panel panel-default" style="display: none;">
+        <div class="panel-heading">Chat Box</div>
+        <div id="msg-list-div" class="panel-body">
+            <ul id="msg-list">
+                <script>
+                    var chatlist = document.getElementById('msg-list-div');
+                    chatlist.scrollTop = chatlist.scrollHeight;
+                </script>
+            </ul>
+        </div>
+    </div>
+
+<!-- ========================================= END FEED ================================================ --!>
+{% endblock %}

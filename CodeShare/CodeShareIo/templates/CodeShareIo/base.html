@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta content="width=device-width, user-scalable=no" name="viewport" />
+    <title>{% block title %}CodeShare{% endblock %}</title>
+    <!-- Loads the path to your static files -->
+    {% load staticfiles %}
+    <!-- x-icon -->
+    <link rel="icon" href="{% static 'CodeShareIo/images/logo.png' %}" type="image/x-icon"/>
+    <!-- fonts & icons -->
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600,700,800,900'>
+    <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'>
+    <link rel="stylesheet" href="{% static 'CodeShareIo/font-awesome-4.6.3/css/font-awesome.min.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,600,700&amp;subset=latin,latin-ext" type="text/css" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'CodeShareIo/index/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'CodeShareIo/index/css/style.css' %}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{% static 'CodeShareIo/index/css/preloader.css' %}">
+    {% block mobile %}{% endblock %}
+    <!-- js -->
+    <script src="{% static 'CodeShareIo/index/js/jquery-2.1.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'CodeShareIo/index/js/newsletter.js' %}"></script>
+  </head>
+  <body class="_body _body_responsive" style="overflow-x: hidden;">
+  {% block preloader %}
+    <!-- loader -->
+    <div id="preloader">
+      <div class="spinning_circle">&nbsp;</div>
+    </div>
+  {% endblock %}
+    <!-- /loader --> <!-- main nav & logo -->
+    <header id="main-nav">
+      <div class="container">
+        <!-- slider menu --> <a id="navigation" href="#"><i class="fa fa-bars1"></i></a>
+        <div id="slide_out_menu">
+          <a href="#" class="menu-close"><i class="fa fa-times"></i></a>
+          <div class="logo"><img src="http://okathemes.com/themes/oppo/images/logo-white.png" alt=""> </div>
+          <ul>
+            <li><a class="top-link" href="#header">Tour</a> </li>
+            <li><a class="top-link" href="#features">Features</a> </li>
+            <li><a class="top-link" href="#interface">Interface</a> </li>
+            <li><a class="top-link" href="#map-feature">Partners</a> </li>
+            <li><a class="top-link" href="#testimonials">Testimonials</a> </li>
+            <li><a class="top-link" href="#plan">Pricing</a> </li>
+            <li><a class="top-link" href="#contacts">Contacts</a> </li>
+            <li><a href="#ready-to-buy" class="btn btn-blue top-link"><i class="fa fa-apple"></i> Get App</a> </li>
+          </ul>
+          <div class="slide_out_menu_footer">
+            <div class="more-info">
+              <p>Developed by <a href="#">Sasha Benjamin</a></p>
+            </div>
+            <ul class="socials">
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <!--/ slider menu --> <!--/ top menu -->
+        <div class="row">
+          <div class="col-md-5">
+            <ul class="left">
+              <li><a class="top-link" href="{% url 'CodeShareIo:index' %}">Home</a> </li>
+              <li><a class="top-link" href="#features">Features</a></li>
+              <li><a class="top-link" href="#dev">Developement</a></li>
+              <li><a class="top-link" href="{% url 'CodeShareIo:mobile' %}">Application</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 text-center"> <a href="{% url 'CodeShareIo:index' %}" class="logo">CodeShare</a> </div>
+          <div class="col-md-5">
+            <ul class="right" style="margin-right: -55px;">
+              <li><a class="top-link" href="#plan">Upgrades</a></li>
+              <li><a class="top-link" href="#footer">Contact</a></li>
+              <li><a class="top-link" href="#footer">Contact</a></li>
+              <li style="margin-right: 17px;"><a class="btn btn-transparent top-link" href="{% url 'CodeShareIo:login' %}" id="login">Login</a> </li>
+              <li><a class="btn btn-blue top-link" href="{% url 'CodeShareIo:register' %}">Sign Up</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+{% block body %}
+
+{% endblock %}
+<!--/ pricing plans -->
+    <div class="pre-footer">
+      <div class="_row">
+        <div class="col-smr-6 col-ar">
+          <h4> <a href="#">Getting started</a> </h4>
+          <p> Learn more about how Codeshare was built, why you should use it, and what's included. We'll cover the basics and help you get started from the ground up. </p>
+        </div>
+        <div class="col-smr-6 col-br">
+          <h4> <a href="#">Documentation</a> </h4>
+          <p> What are you waiting for? Take a look and get coding! Our documentation covers all you need to know to get an app up and running in minutes. </p>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="container footer-container">
+        <div class="row">
+          <div class="col-md-3">
+            <a href="#" class="logo" style="font-size: x-large; text-decoration: none;">CodeShare</a> <br>
+            <p>Link up with developers from around the world, have fun and also, be social</p>
+            <div class="inline-logos">
+                <a href="#" class="app_download"><img src="{% static 'CodeShareIo/images/app-store-badge.svg' %}" alt=""></a>
+                <a href="#" class="app_download"><img src="{% static 'CodeShareIo/images/google-play-badge.svg' %}" alt=""></a>
+            </div>
+            <ul class="socials">
+              <li><a href="#"><i class="fa fa-twitter"></i></a> </li>
+              <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
+              <li><a href="#"><i class="fa fa-snapchat-ghost"></i></a> </li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a> </li>
+              <li><a href="#"><i class="fa fa-envelope-o"></i></a> </li>
+              <li><a href="#"><i class="fa fa-globe"></i></a> </li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-md-offset-3 col-sm-4 col-xs-6 footer-links">
+            <ul>
+              <li>
+                <p class="title">Learn More</p>
+              </li>
+              <li><a href="#">Working process</a> </li>
+              <li><a href="#">System Management</a> </li>
+              <li><a href="#">Online Meeting</a> </li>
+              <li><a href="#">Customer Support</a> </li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 footer-links">
+            <ul>
+              <li>
+                <p class="title">Our Company</p>
+              </li>
+              <li><a href="#">About us</a> </li>
+              <li><a href="#">Mission Statement</a> </li>
+              <li><a href="#">Privacy police</a> </li>
+              <li><a href="#">Terms of use</a> </li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-6 footer-links">
+            <ul>
+              <li>
+                <p class="title">Reach to us</p>
+              </li>
+              <li><a href="#">Contact us</a> </li>
+              <li><a href="#">Live chat</a> </li>
+              <li><a href="#">Phone call</a> </li>
+              <li><a href="#">E-mail system</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container copyright-container">
+        <div class="row">
+          <div class="col-md-6 text-left">
+            <div class="more-info"> &copy; 2016 CodeShare. All rights reserved. </div>
+          </div>
+          <div class="col-md-6 text-right">
+            <div class="made-by">Coded and designed by <a href="https://twitter.com/xSash_" style="text-transform: none;font-size: 12px;">@xSash_</a> </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  {% block newletter %}
+
+    <div class="block block-subscribe newsletter-popup" id="newsletter_popup" style="display: none;text-align: center;">
+      <form action="" method="post" id="newsletter-popup-validate-detail" onsubmit="setNewsletterCookie()">
+        <div class="block-content">
+          <img class="popup-logo" src="{% static 'CodeShareIo/images/logo.png' %}" alt="" />
+          <h6 class="newsletter-title">Subscribe to Newsletter</h6>
+          <p>Subscribe to the CodeShare newsletter to receive weekly updates from your favorite products.</p>
+          <div class="input-group">
+           <input type="text" name="email" id="newsletter_popup_email" title="Sign up for our newsletter" class="input-text form-control required-entry validate-email" placeholder="Email Address" />
+          <span class="input-group-btn">
+           <button type="submit" title="Go!" class="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+          </span>
+         </div>
+        </div>
+      </form>
+      <div class="subscribe-bottom">
+       <input type="checkbox" id="newsletter_popup_dont_show_again"/>
+        <label for="newsletter_popup_dont_show_again">Don't show this popup again</label>
+     </div>
+    </div>
+  {% endblock %}
+    <script type="text/javascript"> $ = jQuery; </script>
+  {% block newletterScript %}
+    <script type="text/javascript" src="{% static 'CodeShareIo/index/js/preloader.js' %}"></script>
+  {% endblock %}
+    <!-- Revolution slider -->
+    <script src="{% static 'CodeShareIo/index/js/jquery.themepunch.plugins.min.js' %}"></script>
+    <script src="{% static 'CodeShareIo/index/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <!-- Slick carousel -->
+    <script src="{% static 'CodeShareIo/index/js/slick.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'CodeShareIo/index/js/bootstrap.min.js' %}"></script>
+    <!-- smooth scroll -->
+    <script src="{% static 'CodeShareIo/index/js/smooth-scroll.min.js' %}"></script>
+    <!-- wow -->
+    <script src="{% static 'CodeShareIo/index/js/wow.min.js' %}"></script>
+    <!-- popup -->
+    <script src="{% static 'CodeShareIo/index/js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Main script -->
+    <script src="{% static 'CodeShareIo/index/js/main.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,636 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-touch" lang="en-US" prefix="og: https://ogp.me/ns#">
+  <head>
+    <!-- Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="description" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <!-- Title --><link rel="stylesheet" href="{% static 'CodeShareIo/css2/dropdown.css' %}">
+
+
+    <title>CodeShare</title>
+    <link rel="icon" href="{% static 'CodeShareIo/images/logo.png' %}" type="image/x-icon"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="{% static 'CodeShareIo/css/toolkit.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'CodeShareIo/chat.css' %}">
+    <!-- End of Title --> <!-- CSS -->
+    <!--<link rel="icon" href="img/i.png" type="image/x-icon"> -->
+    <link rel="stylesheet" href="{% static 'CodeShareIo/css2/bootstrap.min.css' %}"/>
+    <link rel='stylesheet' href="{% static 'CodeShareIo/css2/un.css' %}" type='text/css' media='all'/>
+    <link rel="stylesheet" href="{% static 'CodeShareIo/css2/style.css' %}">
+
+    <link rel="stylesheet" id="uncode-woocommerce-css" href="{% static 'CodeShareIo/css2/woocommerce.css' %}" type="text/css" media="all">
+    <link rel='stylesheet' id='uncode-style-css' href='{% static 'CodeShareIo/css2/styleNav.css' %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='uncode-custom-style-css' href='{% static 'CodeShareIo/css2/style-custom-orange-red.css' %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='uncode-icons-css' href='{% static 'CodeShareIo/font-awesome-4.6.3/css/font-awesome.css' %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='uncode-icons-css' href='{% static 'CodeShareIo/font-awesome-4.6.3/css/font-awesome.min.css' %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='uncodefont-google-css' href='https://fonts.googleapis.com/css?family=Poppins%3A300%2Cregular%2C500%2C600%2C700%7CHind%3A300%2Cregular%2C500%2C600%2C700%7CDroid+Serif%3Aregular%2Citalic%2C700%2C700italic%7CDosis%3A200%2C300%2Cregular%2C500%2C600%2C700%2C800%7CPlayfair+Display%3Aregular%2Citalic%2C700%2C700italic%2C900%2C900italic%7COswald%3A300%2Cregular%2C700%7CRoboto%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic%7CSource+Sans+Pro%3A200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C900%2C900italic&#038;subset=devanagari%2Clatin-ext%2Clatin%2Ccyrillic%2Cvietnamese%2Cgreek%2Ccyrillic-ext%2Cgreek-ext&#038;ver=1.0.0' type='text/css' media='all' />
+    <link rel="stylesheet" href="{% static 'CodeShareIo/css2/style115.css' %}">
+    <style type="text/css">html, body {max-width: 100%;overflow-x: hidden;}#masthead{display: none;}</style>
+
+    <!-- JS -->
+    <script type='text/javascript' src='{% static 'CodeShareIo/js2/jquery.js' %}'></script>
+    <script type='text/javascript' src='{% static 'CodeShareIo/js2/jquery-migrate.min.js' %}'></script>
+    <script type='text/javascript' src='{% static 'CodeShareIo/js2/init.js' %}'></script>
+    <script type="text/javascript" src="{% static 'CodeShareIo/js2/rollup-landing.js' %}"></script>
+
+    <script src="{% static 'CodeShareIo/js2/minify.js' %}"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js2/bootstrap.min.js"></script> -->
+  </head>
+  <body class="page page-id-4935 page-child parent-pageid-43938 page-template-default  style-color-wayh-bg group-blog smooth-scroller hmenu hmenu-position-right header-full-width main-center-align menu-mobile-animated wpb-js-composer js-comp-ver-4.12.1 vc_responsive scroll" style="outline:none;" id="body">
+    <div id="preloader">
+      <div class="spinner">&nbsp;</div>
+    </div>
+  {% block left %}
+<div class="box-wrapper">
+      <div class="box-container">
+        <script type="text/javascript">UNCODE.initBox();</script>
+        <div class="menu-wrapper menu-sticky menu-no-arrows">
+
+<header id="masthead" class="app-navbar navbar menu-primary menu-dark submenu-dark menu-transparent menu-add-padding style-dark-original menu-absolute menu-with-logo" style="width: 101%;">
+  <div class="menu-container style-color-wayh-bg menu-borders menu-shadows">
+    <div class="row-menu limit-width">
+        <div class="row-menu-inner">
+            <div id="logo-container-mobile" class="col-lg-0 logo-container middle">
+                      <div class="or">
+                      <button type="button" class="ou collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+                        <span class="cv">Toggle navigation</span>
+                        <span class="ov"></span>
+                        <span class="ov"></span>
+                        <span class="ov"></span>
+                      </button>
+                      <a class="e" href="{% url 'CodeShareIo:feed' %}">CodeShare</a>
+                    </div>
+                    <div class="mmb-container">
+                      <div class="mobile-menu-button mobile-menu-button-dark lines-button x2"><span class="lines"></span></div>
+                    </div>
+                  </div>
+
+
+    <div class="col-lg-12 main-menu-container middle">
+                    <div class="menu-horizontal">
+                      <div class="menu-horizontal-inner">
+                        <div class="nav navbar-nav navbar-main navbar-nav-first">
+                          <ul id="menu-menu-creative-artist" class="menu-primary-inner menu-smart sm">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42967 menu-item-link"><a href="{% url 'CodeShareIo:index' %}">Home</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42968 menu-item-link"><a href="index.html">Profile</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42969 menu-item-link"><a data-toggle="modal" href="#msgModal">Messages</a></li>
+                            {% if user.is_staff == True %}<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42969 menu-item-link"><a href="http://127.0.0.1:8000/admin/">Admin</a></li>{% endif %}
+                          </ul>
+                        </div>
+                        <div class="nav navbar-nav navbar-nav-last">
+                          <ul class="menu-smart sm menu-icons">
+                            <li class="menu-item-link search-icon style-light dropdown"> <a href="" class="x-btn-navbar-search search-icon" data-area="search" data-container="box-container"> <i class="fa fa-search3"></i><span class="desktop-hidden"><span>Search</span></span><i class="fa fa-angle-down fa-dropdown desktop-hidden"></i> </a> </li>
+                            <li class="uncode-cart menu-item-link menu-item menu-item-has-children dropdown">
+                              <a data-toggle="modal" href="#notifModal" style="cursor:pointer;" id="chart"> <span class="cart-icon-container"><i class="h ws"></i><span class="desktop-hidden">Notifications</span><span id="shww" class="badge">1</span><i class="fa fa-angle-down fa-dropdown desktop-hidden"></i> </span> </a>
+                            </li>
+                            <li class="uncode-cart menu-item-link menu-item menu-item-has-children dropdown" style="">
+                               <button class="cg fm ox anl" data-toggle="popover">
+                                <img class="cu" src="{{ user.users.user_profile_picture.url }}">
+                              </button>
+                            </li>
+                          </ul>
+                          <ul class="nav navbar-nav navbar-nav hidden">
+                            <li><a href="{% url 'CodeShareIo:profile' user.username %}" style="color: #1b1d1f">Profile</a></li>
+                            <li><a href="{% url 'CodeShareIo:logout' %}" style="color: #1b1d1f">Logout</a></li>
+                          </ul>
+                        </div>
+                       <div class="nav navbar-nav">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+    </div> <!-- box container -->
+    <!-- ========================================= MESSAGE POPUP ================================================== -->
+<div class="cd fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="msgModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="d">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" class="cg fx fp eg k js-newMsg">New message</button>
+        <h4 class="modal-title">Messages</h4>
+      </div>
+
+      <div class="modal-body amf js-modalBody">
+        <div class="uq">
+          <div class="qo cj ca js-msgGroup">
+            <a href="#" class="b">
+              <div class="qf">
+                <span class="qj">
+                <img class="cu qh" src="images/alex.jpg">
+                </span>
+                <div class="qg">
+                  <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                  <div class="aof">
+                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="images/kptcheez.jpg">
+                </span>
+                <div class="qg">
+                  <strong>Mark Otto</strong> and <strong>3 others</strong>
+                  <div class="aof">
+                    Brunch sustainable placeat vegan bicycle rights yeah
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="b">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="assets/img/avatar-dhg.png">
+                </span>
+                <div class="qg">
+                  <strong>Dave Gamache</strong>
+                  <div class="aof">
+                    Brunch sustainable placeat vegan bicycle rights yeah
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="hide alj js-conversation">
+            <ul class="qo aob">
+              <li class="qf aoe alu">
+                <div class="qg">
+                  <div class="aoc">
+                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                  </div>
+                  <div class="aod">
+                    <small class="dp">
+                      <a href="#">Dave Gamache</a> at 4:20PM
+                    </small>
+                  </div>
+                </div>
+                <a class="qi" href="#">
+                  <img class="cu qh" src="assets/img/avatar-dhg.png">
+                </a>
+              </li>
+
+              <li class="qf alu">
+                <a class="qj" href="#">
+                  <img class="cu qh" src="images/alex.jpg">
+                </a>
+                <div class="qg">
+                  <div class="aoc">
+                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                  </div>
+                  <div class="aoc">
+                   Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                  </div>
+                  <div class="aoc">
+                   Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                  </div>
+                  <div class="aod">
+                    <small class="dp">
+                      <a href="#">Fat</a> at 4:28PM
+                    </small>
+                  </div>
+                </div>
+              </li>
+
+              <li class="qf alu">
+                <a class="qj" href="#">
+                  <img class="cu qh" src="images/kptcheez.jpg">
+                </a>
+                <div class="qg">
+                  <div class="aoc">
+                   Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                  </div>
+                  <div class="aoc">
+                   Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                  </div>
+                  <div class="aod">
+                    <small class="dp">
+                      <a href="#">Mark Otto</a> at 4:20PM
+                    </small>
+                  </div>
+                </div>
+              </li>
+
+              <li class="qf aoe alu">
+                <div class="qg">
+                  <div class="aoc">
+                    Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
+                  </div>
+                  <div class="aod">
+                    <small class="dp">
+                      <a href="#">Dave Gamache</a> at 4:20PM
+                    </small>
+                  </div>
+                </div>
+                <a class="qi" href="#">
+                  <img class="cu qh" src="assets/img/avatar-dhg.png">
+                </a>
+              </li>
+
+              <li class="qf alu">
+                <a class="qj" href="#">
+                  <img class="cu qh" src="images/alex.jpg">
+                </a>
+                <div class="qg">
+                  <div class="aoc">
+                   Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                  </div>
+                  <div class="aoc">
+                   Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                  </div>
+                  <div class="aoc">
+                   Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+                  </div>
+                  <div class="aod">
+                    <small class="dp">
+                      <a href="#">Fat</a> at 4:28PM
+                    </small>
+                  </div>
+                </div>
+              </li>
+
+              <li class="qf alm">
+                <a class="qj" href="#">
+                  <img class="cu qh" src="images/kptcheez.jpg">
+                </a>
+                <div class="qg">
+                  <div class="aoc">
+                   Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                  </div>
+                  <div class="aoc">
+                   Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                  </div>
+                  <div class="aod">
+                    <small class="dp">
+                      <a href="#">Mark Otto</a> at 4:20PM
+                    </small>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ========================================= END MESSAGE POPUP ================================================== -->
+
+ <!-- ========================================= NOTIFICATIONS POPUP ================================================== -->
+<div class="cd fade" id="notifModal" tabindex="-1" role="dialog" aria-labelledby="notifModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <li class="b aml">
+          <h3 class="alc">Notifications</h3>
+        </li>
+
+      <div class="modal-body amf js-modalBody">
+        <div class="uq">
+          <div class="qo cj ca js-msgGroup">
+                <div class="gz1">
+      <ul class="ca qo anx">
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h abv dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">1 min</small>
+            <div class="qn">
+              <a href="#"><strong>Dave Gamache</strong></a> went traveling
+            </div>
+
+          </div>
+        </li>
+
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h abr dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">3 min</small>
+            <div class="qn">
+              <a href="#"><strong>Mark Otto</strong></a> played destiny
+            </div>
+
+          </div>
+        </li>
+
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h ajv dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">34 min</small>
+            <div class="qn">
+              <a href="#"><strong>Fat</strong></a> and <a href="#"><strong>1 other</strong></a> followed you
+            </div>
+            <ul class="ano">
+              <li class="anp"><img class="cu" src="../images/alex.jpg">
+              <li class="anp"><img class="cu" src="../assets/img/avatar-dhg.png">
+            </ul>
+          </div>
+        </li>
+
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h xi dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">3 min</small>
+            <div class="qn">
+              <a href="#"><strong>Dave Gamache</strong></a> uploaded a photo
+            </div>
+
+            <div class="any" data-grid="images">
+              <img style="display: none" data-width="640" data-height="640" data-action="zoom" src="../assets/img/instagram_3.jpg">
+            </div>
+          </div>
+        </li>
+
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h aax dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">3 min</small>
+            <div class="qn">
+              <a href="#"><strong>Mark Otto</strong></a> flagged your post
+            </div>
+
+            <div class="qv rc alk">
+              <div class="qw">
+                <div class="qf">
+                  <a class="qj" href="#">
+                    <img
+                      class="qh cu"
+                      src="../images/alex.jpg">
+                  </a>
+                  <div class="qg">
+                    <div class="aoc">
+                      <div class="qn">
+                        <small class="eg dp">1 hr</small>
+                        <h5 class="alf">Jacob Thornton</h5>
+                      </div>
+                      Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h ach dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">4 hr</small>
+            <div class="qn">
+              <a href="#"><strong>Mark Otto</strong></a> and <a href="#"><strong>2 others</strong></a> favorited your post
+            </div>
+            <ul class="ano">
+              <li class="anp"><img class="cu" src="images/jeremi.jpg">
+              <li class="anp"><img class="cu" src="images/kptcheez.jpg">
+              <li class="anp"><img class="cu" src="images/alex.jpg">
+            </ul>
+          </div>
+        </li>
+
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h ajv dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">30 min</small>
+            <div class="qn">
+              You followed <a href="#"><strong>Jacob Thornton</strong></a> and <a href="#"><strong>1 other</strong></a>
+            </div>
+
+            <div class="alk">
+              <div class="gc">
+                <div class="gz1">
+                  <div class="qv rc aog">
+                    <div class="qx"
+                         style="background-image: url(../assets/img/instagram_4.jpg);"></div>
+                    <div class="qw dj">
+                      <img class="aoh" src="../images/alex.jpg">
+
+                      <h5 class="qy">Jacob Thornton</h5>
+                      <p class="alu">Big belly rude boy, million dollar hustler. Unemployed.</p>
+
+                      <button class="cg ts fx">
+                        <span class="h vc"></span> Follow
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="gz1">
+                  <div class="qv rc aog">
+                    <div class="qx"
+                         style="background-image: url(../assets/img/instagram_1.jpg);"></div>
+                    <div class="qw dj">
+                      <img class="aoh" src="../images/kptcheez.jpg">
+
+                      <h5 class="qy">Mark Otto</h5>
+                      <p class="alu">GitHub and Bootstrap. Formerly at Twitter. Huge nerd.</p>
+
+                      <button class="cg ts fx">
+                        <span class="h vc"></span> Follow
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h yl dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">30 min</small>
+            <div class="qn">
+              <a href="#"><strong>Jacob Thornton</strong></a> and <a href="#"><strong>1 other</strong></a> updated their settings
+            </div>
+            <ul class="ano">
+              <li class="anp"><img class="cu" src="../images/alex.jpg">
+              <li class="anp"><img class="cu" src="../assets/img/avatar-dhg.png">
+            </ul>
+          </div>
+        </li>
+
+        <li class="b qf aml">
+          <div class="qj">
+            <span class="h zc dp"></span>
+          </div>
+
+          <div class="qg">
+            <small class="eg dp">1 min</small>
+            <div class="qn">
+              <a href="#"><strong>Jacob Thornton</strong></a> quit his job
+            </div>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ========================================= END NOTIFICATIONS POPUP ================================================== -->
+
+  {% endblock %}
+
+
+  {% block feed %}
+
+  {% endblock %}
+
+
+  {% block right %}
+<!-- ========================================= NOTIF ================================================== -->
+    <div class="gn">
+      <div class="alert pv alert-dismissible ss" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <a class="pr" href="profile/index.html">Welcome to CodeShare</a> You can customize your profile the way you want. Follow <a href="">@xSash_</a> on twitter
+      </div>
+<!-- ========================================= END NOTIF ================================================== -->
+
+<!-- ========================================= SPONSORED ================================================== -->
+      <div class="qv rc alu ss">
+        <div class="qw">
+          <h5 class="ald">Sponsored</h5>
+          <div data-grid="images" data-target-height="150">
+            <img class="qh" data-width="1920" data-height="1080" data-action="zoom" src="{% static 'CodeShareIo/images/coding.jpg' %}">
+          </div>
+          <p><strong>Searching for a full-stack developer job?</strong> CodeShare is hiring iOS and Android developers. If your interested apply now!</p>
+          <button class="cg ts fx">Apply</button>
+        </div>
+      </div>
+<!-- ========================================= END SPONSORED ================================================== -->
+
+<!-- ========================================= WHO TO FOLLOW ================================================== -->
+      <div class="qv rc alu ss">
+        <div class="qw">
+        <h5 class="ald">Who to follow <small>· <a href="#">View All</a></small></h5>
+        <ul class="qo anx">
+            {% for item in items %}
+                {% if item.username != user.username %}
+          <li class="qf alm">
+            <a class="qj" href="{% url 'CodeShareIo:profile' item.username %}">
+              <img
+                class="qh cu"
+                src="{{ item.users.user_profile_picture.url }}">
+            </a>
+            <div class="qg">
+              <strong><a href="{% url 'CodeShareIo:profile' item.username %}" style="color: #000;">{{ item.first_name }}</a> · </strong><span href="{% url 'CodeShareIo:profile' item.username %}"><a href="{% url 'CodeShareIo:profile' item.username %}"> {{ item.username }}</a></span>
+              <div class="aoa">
+                <button class="cg ts fx">
+                  <span class="h vc"></span> Follow</button>
+              </div>
+            </div>
+          </li>
+                {% endif %}
+        {% endfor %}
+        </ul>
+        </div>
+        <div class="qz">
+          Add people you know
+        </div>
+      </div>
+<!-- ========================================= END WHO TO FOLLOW ================================================== -->
+<!-- ========================================= FOOTER ================================================== -->
+      <div class="qv rc aok">
+        <div class="qw">
+          © 2016 CodeShare
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+          <a href="#">Ads </a>
+
+          <a href="#">info</a>
+          <a href="#">Brand</a>
+          <a href="#">Blog</a>
+          <a href="#">Status</a>
+          <a href="#">Apps</a>
+          <a href="#">Jobs</a>
+          <a href="#">Advertise</a>
+        </div>
+      </div>
+
+      <!-- ========================================= END FOOTER ================================================== -->
+    </div>
+  </div>
+</div>
+</div>
+    <div class="style-light footer-scroll-top" id="scrollTop"><a href="#" class="scroll-top"><i class="fa fa-angle-up fa-stack fa-rounded btn-default btn-hover-nobg"></i></a></div>
+    <div class="x-searchform-overlay">
+      <div class="x-searchform-overlay-inner">
+        <div class="x-container max width">
+          <form method="get" id="searchform" class="form-search center-text" action="">
+              <input autocomplete="off" type="text" id="s" class="search-query cfc-h-tx center-text tt-upper" name="s" placeholder="Search">
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+
+{% block footer %}
+    <script src="{% static 'CodeShareIo/chat.js' %}"></script>
+ <script src="{% static 'CodeShareIo/js/chart.js' %}"></script>
+    <script src="{% static 'CodeShareIo/js/toolkit.js' %}"></script>
+    <script src="{% static 'CodeShareIo/js/application.js' %}"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+    </script>
+    <script> var _wpcf7 = {}; </script>
+    <script type='text/javascript'> var jckqv = {"settings":{"":""}};</script>
+    <script type='text/javascript' src="{% static 'CodeShareIo/js2/minify2.js' %}"></script>
+    <script type='text/javascript' src='{% static 'CodeShareIo/js2/plugins.js' %}'></script>
+    <script type='text/javascript' src='{% static 'CodeShareIo/js2/app.js' %}'></script>
+
+    <script type='text/javascript' src="{% static 'CodeShareIo/js2/index115.js' %}"></script>
+    <script type='text/javascript' src="{% static 'CodeShareIo/js2/bootstrap.js' %}"></script>
+    <script src="{% static 'CodeShareIo/js/bootstrap.min.js' %}"></script>
+
+{% endblock %}
+  </body>
+</html>

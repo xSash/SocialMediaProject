@@ -1,0 +1,377 @@
+{% extends 'CodeShareIo/base.html' %}
+{% load static %}
+{% block body %}
+    <!--/ main nav & logo --> <!-- header -->
+    <section id="header" class="header-wrapper header-uncode-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 t-pad50" style="top: 10em;">
+            <h2 style="color: #fff;">Made by a developer, for developers</h2>
+            <p style="color: #f0f0f0;">CodeShare is a brand new social platform made to reunite developers. Make friends, learn stuff and feel free to share your code and ideas with other developer like you <br/> <br/> You can use our mobile app or our website to create a CodeShare account for free! </p>
+            <br>
+            <div class="inline-logos">
+                <a href="#" class="app_download" style="margin-right: 10px;"><img src="{% static 'CodeShareIo/images/app-store-badge.svg' %}" alt=""></a>
+                <a href="#" class="app_download"><img src="{% static 'CodeShareIo/images/google-play-badge.svg' %}" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-scrolldown style-light" > <a><i class="fa fa-angle-down"></i></a> </div>
+    </section>
+    <!--/ header --><!--/ features -->
+    <section id="features" class="twelve-column features-container">
+      <article class="content-row wow fadeInUp">
+        <article class="content-module media-text media-text-inline media-text--alt-order media-text--horizontal clearfix" id="docs-anywhere">
+          <div class="media-text__content">
+            <div class="media-text__wrapper">
+              <div class="media-text__text">
+                <h2 class="media-text__header">Performance obsessed</h2>
+                <p class="media-text__body">Speed is important. So important that you only notice when it isn't there. Codeshare is built to perform and behave great on the latest mobile devices. With <span class="feature-row-strong">minimal DOM</span> manipulation, <span class="feature-row-strong">zero jQuery</span>, and <span class="feature-row-strong">hardware accelerated</span> transitions, one thing is for sure: You'll be impressed.</p>
+              </div>
+            </div>
+            <div class="media-text__wrapper">
+              <div class="media-text__media">
+                <h2 class="media-text__header media-text__header--responsive">Performance obsessed</h2>
+                <img src="{% static 'CodeShareIo/images/performance@2x.png' %}" alt="" class="media-text__image--responsive media-text__image" />
+                <div style="width:454px; height:340px;"class="animator"><img src="{% static 'CodeShareIo/images/performance@2x.png' %}" alt="" class="animator-poster" /></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="expanding-section"> <button class="expanding-section__button"><span class="button-text"><span class="">Learn more</span> </span></button> </section>
+      </article>
+      <article class="content-row wow fadeInUp" data-wow-delay=".1s">
+        <article class="content-module media-text media-text-inline media-text--horizontal clearfix" id="send-videos">
+          <div class="media-text__content">
+            <div class="media-text__wrapper">
+              <div class="media-text__media">
+                <h2 class="media-text__header media-text__header--responsive">Angular</h2>
+                <img src="{% static 'CodeShareIo/images/angular-ionic@2x.png' %}" alt="" class="media-text__image--responsive media-text__image" />
+                <div style="width:458px; height:340px;" class="animator" data-implementation-height="240"><img src="{% static 'CodeShareIo/images/angular-ionic@2x.png' %}" alt="" class="animator-poster" /></div>
+              </div>
+            </div>
+            <div class="media-text__wrapper">
+              <div class="media-text__text">
+                <h2 class="media-text__header">Angular</h2>
+                <p class="media-text__body"><span>A match made in heaven.</span> CodeShare utilizes <a href="http://angularjs.org/">Angular</a> in order to create a powerful SDK most suited to develop rich and robust applications. CodeShare not only looks nice, but its core architecture is built for <span class="feature-row-strong">serious app development</span>, and Angular ties in perfectly.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="expanding-section--alt-order expanding-section"> <button class="expanding-section__button"><span class="button-text"><span class="">Learn more</span> </span></button> </section>
+      </article>
+      <article class="content-row wow fadeInUp" data-wow-delay=".2s">
+        <article class="content-module media-text media-text-inline media-text--alt-order media-text--horizontal clearfix" id="photos-safe">
+          <div class="media-text__content">
+            <div class="media-text__wrapper">
+              <div class="media-text__text">
+                <h2 class="media-text__header">Native focused</h2>
+                <p class="media-text__body">CodeShare is modeled on popular native mobile development SDKs, making it easy to understand for anyone that has built a native app for <span class="feature-row-strong">iOS</span> or <span class="feature-row-strong">Android</span>. Just drop it in your code to get going, and push through <a href="http://cordova.apache.org/" target="_blank">Cordova</a> or <a href="http://phonegap.com/" target="_blank">Phonegap</a> when it's ready. <span class="feature-row-strong">Develop once, deploy everywhere</span>.</p>
+              </div>
+            </div>
+            <div class="media-text__wrapper">
+              <div class="media-text__media">
+                <h2 class="media-text__header media-text__header--responsive">Native focused</h2>
+                <img src="{% static 'CodeShareIo/images/native@2x.png' %}" alt="" class="media-text__image--responsive media-text__image" />
+                <div style="width:450px; height:360px;" class="animator"><img src="{% static 'CodeShareIo/images/native@2x.png' %}" alt="" class="animator-poster" /></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="expanding-section"> <button class="expanding-section__button"><span class="button-text"><span class="">Learn more</span> </span></button> </section>
+      </article>
+      <article class="content-row wow fadeInUp" data-wow-delay=".3s">
+        <article class="content-module media-text media-text-inline media-text--horizontal clearfix" id="work-together">
+          <div class="media-text__content">
+            <div class="media-text__wrapper">
+              <div class="media-text__media">
+                <h2 class="media-text__header media-text__header--responsive">Beautifully designed</h2>
+                <img src="{% static 'CodeShareIo/images/design@2x.png' %}" alt="" class="media-text__image--responsive media-text__image" />
+                <div style="width:420px; height:270px;" class="animator"><img src="{% static 'CodeShareIo/images/design@2x.png' %}" alt="" class="animator-poster" /></div>
+              </div>
+            </div>
+            <div class="media-text__wrapper">
+              <div class="media-text__text">
+                <h2 class="media-text__header">Beautifully designed</h2>
+                <p class="media-text__body">Clean, simple, and functional. CodeShare has been designed to work and <span class="feature-row-strong">display beautifully</span> on all current mobile devices. With tons of popular mobile components, typography, interactive paradigms, and a gorgeous (yet extensible) base theme, you'll wonder how you lived without it.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="expanding-section--alt-order expanding-section"> <button class="expanding-section__button"><span class="button-text"><span class="">Learn more</span> </span></button> </section>
+      </article>
+      <article class="content-row wow fadeInUp" data-wow-delay=".4s">
+        <article class="content-module media-text media-text-inline media-text--alt-order media-text--horizontal clearfix" id="never-lose">
+          <div class="media-text__content">
+            <div class="media-text__wrapper">
+              <div class="media-text__text">
+                <h2 class="media-text__header">A powerful CLI</h2>
+                <p class="media-text__body">Use just one command to <span class="feature-row-strong">create, build, test, and deploy</span> your CodeShare project onto any platform. With amazing features like Live Reload and integrated logging, you'll already be miles ahead of your native frenemies. Just run <code>npm install -g CodeShare</code>, and you're good to go!</p>
+              </div>
+            </div>
+            <div class="media-text__wrapper">
+              <div class="media-text__media">
+                <h2 class="media-text__header media-text__header--responsive">A powerful CLI</h2>
+                <img src="{% static 'CodeShareIo/images/cli@2x.png' %}" alt="" class="media-text__image--responsive media-text__image" />
+                <div style="width:460px; height:340px;" class="animator"><img src="{% static 'CodeShareIo/images/cli@2x.png' %}" alt="" class="animator-poster" /></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="expanding-section"> <button class="expanding-section__button"><span class="button-text"><span class="">Learn more</span> </span></button> </section>
+      </article>
+      <article class="content-row wow fadeInUp" data-wow-delay=".5s">
+        <article class="content-module media-text media-text-inline media-text--horizontal clearfix" id="work-together">
+          <div class="media-text__content">
+            <div class="media-text__wrapper">
+              <div class="media-text__media">
+                <h2 class="media-text__header media-text__header--responsive">Fun to learn</h2>
+                <img src="{% static 'CodeShareIo/images/learn@2x.png' %}" alt="" class="media-text__image--responsive media-text__image" />
+                <div style="width:420px; height:340px;" class="animator"><img src="{% static 'CodeShareIo/images/learn@2x.png' %}" alt="" class="animator-poster" /></div>
+              </div>
+            </div>
+            <div class="media-text__wrapper">
+              <div class="media-text__text">
+                <h2 class="media-text__header">Fun to learn</h2>
+                <p class="media-text__body">All you need to know are <span class="feature-row-strong">HTML, CSS, and JavaScript:</span> the building blocks of the web. You'll even learn AngularJS as you work. We wrote <a href="CodeShareTutorials.html">tons of tutorials</a> to get you started and help you level up your mobile development skills. There’s no question <span class="feature-row-strong">you'll be shipping apps in no time</span>.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="expanding-section--alt-order expanding-section"> <button class="expanding-section__button"><span class="button-text"><span class="">Learn more</span> </span></button> </section>
+      </article>
+      <article class="content-row wow fadeInUp" data-wow-delay=".6s">
+        <article class="content-module media-text media-text-inline media-text--alt-order media-text--horizontal clearfix" id="never-lose">
+          <div class="media-text__content">
+            <div class="media-text__wrapper">
+              <div class="media-text__text">
+                <h2 class="media-text__header">Built by nerds (like you)</h2>
+                <p class="media-text__body">Built and maintained by <span class="feature-row-strong">developers <i>and</i> designers</span> passionate about web technologies. CodeShare focuses on standards compliant code, is forward thinking, and is managed through <a href="https://github.com/">Github</a>. We're making mobile development with HTML5 awesome and simple.</p>
+              </div>
+            </div>
+            <div class="media-text__wrapper">
+              <div class="media-text__media">
+                <h2 class="media-text__header media-text__header--responsive">Built by nerds (like you)</h2>
+                <img src="{% static 'CodeShareIo/images/nerds@2x.png' %}" alt="" class="media-text__image--responsive media-text__image" />
+                <div style="width:460px; height:340px;" class="animator"><img src="{% static 'CodeShareIo/images/nerds@2x.png' %}" alt="" class="animator-poster" /></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="expanding-section"> <button class="expanding-section__button"><span class="button-text"><span class="">Learn more</span> </span></button> </section>
+      </article>
+    </section>
+    <div id="dev" class="k al block-secondary aa">
+      <div class="e">
+        <div class="c ap">
+          <div class="gg jr">
+            <pre class="ab">
+    <span>1</span> <span class="vb">CodeShareAnalytics</span> “who are the latest 3 users?”
+    <span>2</span>
+    <span>3</span>  {
+    <span>4</span>    "Sash": {
+    <span>5</span>      "fullName": "Sasha",
+    <span>6</span>      "CodeShareHandle": "@xSash",
+    <span>7</span>    }
+    <span>8</span>    "Alex": {
+    <span>9</span>      "fullName": "Alexandre",
+    <span>10</span>      "CodeShareHandle": "@xBlade45",
+    <span>11</span>    }
+    <span>12</span>    "Jay": {
+    <span>13</span>      "fullName": "Jeremi",
+    <span>14</span>      "CodeShareHandle": "@ninespin",
+    <span>15</span>    }
+    <span>16</span>  }</pre>
+          </div>
+
+          <div class="gk jg">
+            <h6 class="am eu">Easy development</h6>
+            <h3 class="alp">Natural language queries make mining data easy for anyone.</h3>
+            <p class="ak amf am">Rather than force everyone to learn incredibly difficult terminal commands, we allow anyone to query the data with natural and simple language to return data.</p>
+            <button class="dl oq ao tl">
+              Read our docs
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ features -->
+    <section id="mobile-app">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Mobile Application</h2>
+            <p class="subtitle">CodeShare exquisite features</p>
+          </div>
+        </div>
+        <div class="row b-pad50">
+          <div class="col-md-4 feature-item">
+            <div class="feature wow fadeInLeft">
+              <div class="f-icon left"><i class="lnr lnr-smartphone"></i> </div>
+              <div class="f-description">
+                <h4>Fully Resposive & Retina Ready</h4>
+                <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat sunt culpa qui officia. </p>
+              </div>
+            </div>
+            <div class="feature wow fadeInLeft" data-wow-delay=".1s">
+              <div class="f-icon left"><i class="lnr lnr-rocket"></i> </div>
+              <div class="f-description">
+                <h4>Dynamic & Extra Efficient</h4>
+                <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat sunt culpa qui officia. </p>
+              </div>
+            </div>
+            <div class="feature wow fadeInLeft" data-wow-delay=".2s">
+              <div class="f-icon left"><i class="lnr lnr-diamond"></i> </div>
+              <div class="f-description">
+                <h4>Comprehensive & Well Documented</h4>
+                <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat sunt culpa qui officia. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="wow fadeInUp" data-wow-delay=".2s"> <img class="wow fadeInUp" src="{% static 'CodeShareIo/images/iphone.png' %}" alt="" data-wow-delay=".3s"></div>
+          </div>
+          <div class="col-md-4 feature-item">
+            <div class="feature wow fadeInRight">
+              <div class="f-icon left"><i class="lnr lnr-download"></i> </div>
+              <div class="f-description">
+                <h4>Free Updates & Download </h4>
+                <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat sunt culpa qui officia. </p>
+              </div>
+            </div>
+            <div class="feature wow fadeInRight" data-wow-delay=".1s">
+              <div class="f-icon left"><i class="lnr lnr-earth"></i> </div>
+              <div class="f-description">
+                <h4>Cross Browser Integration</h4>
+                <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat sunt culpa qui officia. </p>
+              </div>
+            </div>
+            <div class="feature wow fadeInRight" data-wow-delay=".2s">
+              <div class="f-icon left"><i class="lnr lnr-clock"></i> </div>
+              <div class="f-description">
+                <h4>Dedicated Support <br> System</h4>
+                <p>Duis aute irure dolor in reprehend in voluptate velit esse cillum dolore fugiat nulla pariatur occaecat cupidatat sunt culpa qui officia. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="dev" class="k2 al block-secondary aa wow fadeInUp" data-wow-delay=".4s" style="background-color: transparent;">
+      <div class="e">
+        <div class="c ap">
+          <div class="gg jr2">
+            <div class="gk jg">
+            <button id="learn-mobile" class="dl oq ao tl" data-href="mobile.html">Learn more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </section>
+    <!--/ features --> <!--/ features --> <!-- map feature -->
+    <section id="map-feature">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 t-pad50">
+            <h2>We are located all around the globe</h2>
+            <p>We are currently making expending out platform to the world. <br/> <br/> Stay connected with our partners. qui dolorem ipsum quia dolor sit amet, consectetur. </p>
+            <br>
+            <div class="partners">
+              <div class="title">Partners</div>
+              <ul>
+                <li> <a href="#"><img src="http://okathemes.com/themes/oppo/images/partner1.png" alt=""></a> </li>
+                <li> <a href="#"><img src="http://okathemes.com/themes/oppo/images/partner2.png" alt=""></a> </li>
+                <li> <a href="#"><img src="http://okathemes.com/themes/oppo/images/partner3.png" alt=""></a> </li>
+                <li> <a href="#"><img src="http://okathemes.com/themes/oppo/images/partner4.png" alt=""></a> </li>
+                <li> <a href="#"><img src="http://okathemes.com/themes/oppo/images/partner5.png" alt=""></a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="map-showcase wow fadeInRight">
+            <div class="map"><img src="http://okathemes.com/themes/oppo/images/map.png" alt=""></div>
+          </div>
+          <!--/ map showcase -->
+        </div>
+      </div>
+    </section>
+    <!--/ map feature --> <!-- pricing plans -->
+    <section id="plan">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Choose your perfect business plan</h2>
+            <p class="subtitle">You are</p>
+            <div class="toggle-container cf">
+              <div class="switch-toggles">
+                <div class="personal">Personal</div>
+                <!-- active -->
+                <div class="company">Company</div>
+              </div>
+            </div>
+            <p>You can upgrade your account for more features and privileges.</p>
+            <p class="info">Have a professional team? <a href="#">Let's talk</a></p>
+          </div>
+          <div id="price_tables" class="col-md-7 col-md-offset-1 wow fadeInUp">
+            <div class="personal cf">
+              <div class="price-table highlighted">
+                <div class="table-inner text-center">
+                  <h3>Starter</h3>
+                  <span class="price">Free</span>
+                  <p class="phrase">Build your schedule <br> every day</p>
+                  <ul class="feature-list">
+                    <li><i class="fa fa-check"></i> Upto 4 projects</li>
+                    <li><i class="fa fa-check"></i> Basic server license</li>
+                    <li>&nbsp;</li>
+                  </ul>
+                  <a href="" class="btn btn-blue">Get Started</a>
+                </div>
+              </div>
+              <div class="price-table">
+                <div class="table-inner text-center">
+                  <h3>Pro</h3>
+                  <span class="price">$49.99</span>
+                  <p class="phrase">Make your life <br> better</p>
+                  <ul class="feature-list">
+                    <li><i class="fa fa-check"></i> Upto 4 projects</li>
+                    <li><i class="fa fa-check"></i> Commercial server license</li>
+                    <li><i class="fa fa-check"></i> Afterhours support</li>
+                  </ul>
+                  <a href="" class="btn btn-blue">Make me a pro</a>
+                </div>
+              </div>
+            </div>
+            <!--/ personal -->
+            <div class="company cf">
+              <div class="price-table">
+                <div class="table-inner text-center">
+                  <h3>Starter</h3>
+                  <span class="price">Free</span>
+                  <p class="phrase">Build your schedule <br> every day</p>
+                  <ul class="feature-list">
+                    <li><i class="fa fa-check"></i> Unlimeted events</li>
+                    <li><i class="fa fa-check"></i> Connect Dropbox & Evernote</li>
+                    <li>&nbsp;</li>
+                  </ul>
+                  <a href="" class="btn btn-blue">Get Started</a>
+                </div>
+              </div>
+              <div class="price-table highlighted">
+                <div class="table-inner text-center">
+                  <h3>Pro</h3>
+                  <span class="price">$4.99</span>
+                  <p class="phrase">Make your life <br> better</p>
+                  <ul class="feature-list">
+                    <li><i class="fa fa-check"></i> Unlimeted events</li>
+                    <li><i class="fa fa-check"></i> Connect Dropbox & Evernote</li>
+                    <li><i class="fa fa-check"></i> Personal assistant</li>
+                  </ul>
+                  <a href="" class="btn btn-blue">Make me a pro</a>
+                </div>
+              </div>
+            </div>
+            <!--/ company -->
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
