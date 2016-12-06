@@ -25,5 +25,5 @@ urlpatterns = [
     # /CodeShareIo/MessagesChat
     url(r'^MessagesChat/$', views.MessagesChat, name='messagesChat'),
     # /CodeShareIo/MessagesChat
-    url(r'^FeedChat/$', views.FeedChat, name='feedChat'),
+    url(r'^FeedChat/$', views.FeedConnectedUser, name='feedChat'),
 ]

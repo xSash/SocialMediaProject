@@ -1,5 +1,4 @@
 {% for obj in chat %}
-              {% if user.username == obj.user.username %}
         <li class="qf b aml">
           <div class="dropdown" style="float: right;margin-top: -10px;margin-right: -15px;">
     <button class="btn btn-primary1 dropdown-toggle" type="button" data-toggle="dropdown">
@@ -21,11 +20,10 @@
                 <small class="eg dp">{{ obj.pub_date }}</small>
                 <div style="margin-top: -20px;display: inline-flex;"><h5 style="margin-right: 5px;">{{ obj.user.first_name }} •</h5><h6 style="color: #9da9b0;font-size: 15px;font-weight: 100;">{{ obj.user.username }}</h6></div>
               </div>
-              <p id="med">
-
+              <p>
+                {{ obj.content }}
               </p>
             </div>
           </div>
         </li>
-              {% endif %}
 {% endfor %}

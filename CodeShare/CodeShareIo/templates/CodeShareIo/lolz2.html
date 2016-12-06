@@ -1,1 +1,3 @@
-{{ userProfile }}
+{% for obj in post %}
+{{ obj.user.username }}
+{% endfor %}

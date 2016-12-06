@@ -16,7 +16,7 @@ class IndexView(generic.ListView):
         return Users.objects.all()
 
 
-class ProfileView(generic.DeleteView):
+class ProfileView(generic.DetailView):
     model = User
     template_name = 'CodeShareIo/userProfile.html'
     slug_field = "username"
@@ -160,21 +160,16 @@ def MessagesChat(request):
     c = Post.objects.all().order_by('-pub_date')
     return render(request, 'CodeShareIo/messagesChat.html', {'chat': c})
 
-def FeedChat(request):
+
+def FeedConnectedUser(request):
     u = None
-    lol = None
     if request.method == 'POST':
         u = request.POST.get('user1')
-        lol = u
-        print "*******************************", lol
 
-    if request.method == "GET":
-        u = request.POST.get('user1')
-        lol = u
-        print "*******************************", lol
+    print "*******************************", u
 
-    c = Post.objects.all().order_by('-pub_date')
-    print "Viewing the profile of : ", lol, u
-    print "Passing : ", lol, " to the template"
-    return render(request, 'CodeShareIo/lolz.html', {'chat': c, 'userProfile_username': u})
+    user = User.objects.filter(username="@admin")
+    print "user : ", user
+    c = Post.objects.all().filter(user=user)
+    return render(request, 'CodeShareIo/lolz.html', {'chat': c})
 
