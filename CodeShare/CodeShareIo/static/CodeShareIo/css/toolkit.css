@@ -2740,7 +2740,7 @@ tbody.collapse.in {
   cursor: not-allowed;
 }
 .open > .dropdown-menu {
-  display: block;
+  display: inline-flex;
 }
 .open > a {
   outline: 0;
