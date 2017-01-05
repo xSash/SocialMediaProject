@@ -1,5 +1,11 @@
-{% extends 'CodeShareIo/baseProfile.html' %}
+{% extends 'CodeShareIo/baseFeed.html' %}
 {% load static %}
+{% block loading %}
+
+{% endblock %}
+{% block preloader %}
+
+{% endblock %}
 {% block feed %}
 
 <div class="ans dj"
@@ -16,19 +22,19 @@
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
                 Followers
-                <h5 class="ali">587K</h5>
+                <h5 class="ali">0</h5>
               </a>
             </li>
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
                 Following
-                <h5 class="ali">500</h5>
+                <h5 class="ali">0</h5>
               </a>
             </li>
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
                 Post
-                <h5 class="ali">{{ num_of_post }}</h5>
+                <h5 class="ali">{{ user.post_set.count }}</h5>
               </a>
             </li>
           </ul>
@@ -142,11 +148,12 @@
       </div>
     </div>
 <!-- ========================================= END USERS INFO ================================================== -->
+   <!-- ==================================== FEED ================================================== -->
 
-<!-- ========================================= FEED ================================================== -->
 
     <div class="gz" style="margin-top: -20px;">
       <ul class="ca qo anx">
+     {% if user.username == request.user.username %}
         <li class="qf b aml">
             <ul class="post-types" style="display: inline-flex;">
         <li class="post-type" style="margin-right: 10px;">
@@ -156,20 +163,82 @@
           <a class="photos" href="#"><i class="icon icon-camera"></i> Add photos</a>
         </li>
       </ul>
-            {% with name=user.username %}
-
       <form id="chat-form" method="POST" action="/CodeShareIo/PostChat/" autocomplete="off">
           <div class="input-group">
             <input type="text" id="chat-msg" name="chat-msg" class="form-control post" placeholder="Write a post">
             <div class="fj">
               <button type="button" class="cg fm" name="">
-                <i class="fa fa-file-text" aria-hidden="true"></i>
+                <i class="fa fa-link" aria-hidden="true"></i>
               </button>
               <button type="button" class="cg fm">
                 <i class="fa fa-camera" aria-hidden="true"></i>
               </button>
+                <button type="button" class="cg fm btn btn-primary1 dropdown mega-dropdown dropdown-toggle">
+                 <i class="em em-blush"></i>
+                </button>
+                        <ul class="dropdown-menu mega-dropdown-menu">
+                           <div class="article_page">
+        <div class="article_container">
+          <div class="content_col">
+            <div class="article_body">
+              <div class="tabs enclosed">
+                <p class="option" title="tab_one"><i class="em em-smile"></i></p>
+                <p class="option" title="tab_one2"><i class="em em-bear"></i></p>
+                <p class="option" title="tab_one3"><i class="em em-hamburger"></i></p>
+                <p class="option" title="tab_one4"><i class="em em-soccer"></i></p>
+                <p class="option" title="tab_one5"><i class="em em-bank"></i></p>
+                <p class="option" title="tab_one6"><i class="em em-wrench"></i></p>
+                <p class="option" title="tab_one7"><i class="em em-us"></i></p>
+                <section title="tab_one">
+                    <ul style="display: inline-flex; text-align: left">
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                    </ul>
+                </section>
+                <section title="tab_one2">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+                <section title="tab_one3">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                    <li><em class="ts_icon ts_icon_android_keyboard"></em></li>
+                    <li><em class="ts_icon ts_icon_paper_plane"> </em></li>
+                  </ol>
+                </section>
+                <section title="tab_one4">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+                <section title="tab_one5">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+                <section title="tab_one6">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+                <section title="tab_one7">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+                        </ul>
+                    </div>
+              </div>
             <div class="input-group">
                 <select name="privacy" class="form-control post">
                     <option value="1" selected="selected">Public</option>
@@ -183,9 +252,9 @@
             </div>
           </div>
       </form>
-            {% endwith %}
-        </li>
 
+        </li>
+{% endif %}
       <ul id="msg-list" class="list-group">
       </ul>
       </ul>
@@ -205,5 +274,35 @@
         </div>
     </div>
 
-<!-- ========================================= END FEED ================================================ --!>
+{% endblock %}
+
+{%  block feedScript %}<script src="{% static 'CodeShareIo/feed.js' %}"></script>{% endblock %}
+
+{% block follow %}
+      <div class="qv rc alu ss">
+        <div class="qw">
+        <h5 class="ald">Who to follow <small>· <a href="#">View All</a></small></h5>
+        <ul class="qo anx">
+                {% if user.username != request.user.username %}
+          <li class="qf alm">
+            <a class="qj" href="#">
+              <img
+                class="qh cu"
+                src="{{ user.users.user_profile_picture.url }}">
+            </a>
+            <div class="qg">
+              <strong><a href="#" style="color: #000;">{{ user.first_name }}</a> · </strong><span href="#"><a href="#"> {{ user.username }}</a></span>
+              <div class="aoa">
+                <button class="cg ts fx">
+                  <span class="h vc"></span> Follow</button>
+              </div>
+            </div>
+          </li>
+                {% endif %}
+        </ul>
+        </div>
+        <div class="qz">
+          Add people you know
+        </div>
+      </div>
 {% endblock %}

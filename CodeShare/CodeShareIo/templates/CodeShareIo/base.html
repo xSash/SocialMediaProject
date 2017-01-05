@@ -36,7 +36,7 @@
         <!-- slider menu --> <a id="navigation" href="#"><i class="fa fa-bars1"></i></a>
         <div id="slide_out_menu">
           <a href="#" class="menu-close"><i class="fa fa-times"></i></a>
-          <div class="logo"><img src="http://okathemes.com/themes/oppo/images/logo-white.png" alt=""> </div>
+          <div class="logo"><img src="" alt=""> </div>
           <ul>
             <li><a class="top-link" href="#header">Tour</a> </li>
             <li><a class="top-link" href="#features">Features</a> </li>
@@ -66,18 +66,22 @@
           <div class="col-md-5">
             <ul class="left">
               <li><a class="top-link" href="{% url 'CodeShareIo:index' %}">Home</a> </li>
-              <li><a class="top-link" href="#features">Features</a></li>
-              <li><a class="top-link" href="#dev">Developement</a></li>
-              <li><a class="top-link" href="{% url 'CodeShareIo:mobile' %}">Application</a></li>
+              <li><a class="top-link" href="#features">About</a></li>
+              <li><a class="top-link" href="#dev">Developers</a></li>
+              <li><a class="top-link" href="{% url 'CodeShareIo:mobile' %}">Blog</a></li>
             </ul>
           </div>
-          <div class="col-md-2 text-center"> <a href="{% url 'CodeShareIo:index' %}" class="logo">CodeShare</a> </div>
+          <div class="col-md-2 text-center"> <a href="{% url 'CodeShareIo:index' %}" class="logo"><img src="{% static 'CodeShareIo/images/logo.png' %}" style="width: 33%;"/></a> </div>
           <div class="col-md-5">
-            <ul class="right" style="margin-right: -55px;">
-              <li><a class="top-link" href="#plan">Upgrades</a></li>
-              <li><a class="top-link" href="#footer">Contact</a></li>
-              <li><a class="top-link" href="#footer">Contact</a></li>
-              <li style="margin-right: 17px;"><a class="btn btn-transparent top-link" href="{% url 'CodeShareIo:login' %}" id="login">Login</a> </li>
+            <ul class="right">
+              <li><a class="top-link" href="#plan">News</a></li>
+              <li><a class="top-link" href="#footer">Store</a></li>
+              <li style="margin-right: 17px;"><a class="btn btn-transparent top-link" href="{% url 'CodeShareIo:login' %}" id="login">
+                  {% if user.is_authenticated %}
+                      {{ user.username }}
+                    {% else %}
+                      Login
+                  {% endif %}</a> </li>
               <li><a class="btn btn-blue top-link" href="{% url 'CodeShareIo:register' %}">Sign Up</a></li>
             </ul>
           </div>

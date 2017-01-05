@@ -1,15 +1,21 @@
+<style>
+
+    .open > .dropdown-menu {
+        display: block;
+    }
+</style>
 {% for obj in chat %}
         <li class="qf b aml">
           <div class="dropdown" style="float: right;margin-top: -10px;margin-right: -15px;">
     <button class="btn btn-primary1 dropdown-toggle" type="button" data-toggle="dropdown">
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="#">Delete</a></li>
+      <li id="del"><a href="{% url 'CodeShareIo:post-delete' obj.id %}">Delete</a></li>
+      <li id="edit"><a data-toggle="modal" href="#postEdit" onclick="getID({{ obj.id }})">Edit</a></li>
       <li><a href="#">Share</a></li>
-      <li><a href="#">Edit</a></li>
     </ul>
   </div>
-          <a class="qj" href="#">
+          <a class="qj" href="{% url 'CodeShareIo:profile' obj.user.username %}">
             <img
               class="qh cu"
               src="{{ obj.user.users.user_profile_picture.url }}">
@@ -27,3 +33,11 @@
           </div>
         </li>
 {% endfor %}
+<script>
+    function getID(id) {
+
+        console.log("******************************************" + id);
+        loadID(id)
+
+    }
+</script>

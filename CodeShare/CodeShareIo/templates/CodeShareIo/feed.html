@@ -87,13 +87,13 @@
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
                 Followers
-                <h5 class="ali">587K</h5>
+                <h5 class="ali">0</h5>
               </a>
             </li>
             <li class="aoj">
               <a href="#userModal" class="aku" data-toggle="modal">
                 Following
-                <h5 class="ali">500</h5>
+                <h5 class="ali">0</h5>
               </a>
             </li>
             <li class="aoj">
@@ -138,8 +138,9 @@
 <!-- ========================================= END USERS INFO ================================================== -->
 <!-- ========================================= FEED ================================================== -->
 
-    <div class="gz" style="margin-top: -20px;">
+ <div class="gz" style="margin-top: -20px;">
       <ul class="ca qo anx">
+     {% if user.username == request.user.username %}
         <li class="qf b aml">
             <ul class="post-types" style="display: inline-flex;">
         <li class="post-type" style="margin-right: 10px;">
@@ -153,14 +154,78 @@
           <div class="input-group">
             <input type="text" id="chat-msg" name="chat-msg" class="form-control post" placeholder="Write a post">
             <div class="fj">
-              <button type="button" class="cg fm">
-                <i class="fa fa-file-text" aria-hidden="true"></i>
+              <button type="button" class="cg fm" name="">
+                <i class="fa fa-link" aria-hidden="true"></i>
               </button>
               <button type="button" class="cg fm">
                 <i class="fa fa-camera" aria-hidden="true"></i>
               </button>
+                <button type="button" class="cg fm btn btn-primary1 dropdown mega-dropdown dropdown-toggle">
+                 <i class="em em-blush"></i>
+                </button>
+                        <ul class="dropdown-menu mega-dropdown-menu">
+                           <div class="article_page">
+        <div class="article_container">
+          <div class="content_col">
+            <div class="article_body">
+              <div class="tabs enclosed">
+                <p class="option" title="tab_one"><i class="em em-smile"></i></p>
+                <p class="option" title="tab_one2"><i class="em em-bear"></i></p>
+                <p class="option" title="tab_one3"><i class="em em-hamburger"></i></p>
+                <p class="option" title="tab_one4"><i class="em em-soccer"></i></p>
+                <p class="option" title="tab_one5"><i class="em em-bank"></i></p>
+                <p class="option" title="tab_one6"><i class="em em-wrench"></i></p>
+                <p class="option" title="tab_one7"><i class="em em-us"></i></p>
+                <section title="tab_one">
+                    <ul style="display: inline-flex; text-align: left">
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                        <li><a><i class="em em-clock5"></i></a></li>
+                    </ul>
+                </section>
+                <section title="tab_one2">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+                <section title="tab_one3">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                    <li><em class="ts_icon ts_icon_android_keyboard"></em></li>
+                    <li><em class="ts_icon ts_icon_paper_plane"> </em></li>
+                  </ol>
+                </section>
+                <section title="tab_one4">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+                <section title="tab_one5">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+                <section title="tab_one6">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+                <section title="tab_one7">
+                  <ol>
+                    <li><em class="ts_icon ts_icon_smile_o"></em></li>
+                  </ol>
+                </section>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+                        </ul>
+                    </div>
+              </div>
             <div class="input-group">
                 <select name="privacy" class="form-control post">
                     <option value="1" selected="selected">Public</option>
@@ -174,41 +239,10 @@
             </div>
           </div>
       </form>
-        </li>
 
+        </li>
+{% endif %}
       <ul id="msg-list" class="list-group">
-          {% for obj in chat %}
-              {% if obj.user == request.user %}
-        <li class="qf b aml">
-          <div class="dropdown" style="float: right;margin-top: -10px;margin-right: -15px;">
-    <button class="btn btn-primary1 dropdown-toggle" type="button" data-toggle="dropdown">
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Delete</a></li>
-      <li><a href="#">Share</a></li>
-      <li><a href="#">Edit</a></li>
-    </ul>
-  </div>
-          <a class="qj" href="#">
-            <img
-              class="qh cu"
-              src="{{ obj.user.users.user_profile_picture.url }}">
-          </a>
-          <div class="qg">
-            <div class="aoc">
-              <div class="qn">
-                <small class="eg dp">{{ obj.pub_date }}</small>
-                <div style="margin-top: -20px;display: inline-flex;"><h5 style="margin-right: 5px;">{{ obj.user.first_name }} · </h5><h6 style="color: #9da9b0;font-size: 15px;font-weight: 100;">{{ obj.user.username }}</h6></div>
-              </div>
-              <p>
-                {{ obj.message }}
-              </p>
-            </div>
-          </div>
-        </li>
-              {% endif %}
-{% endfor %}
-
       </ul>
       </ul>
             <div class="qz" style="margin-top: -20px;text-align: center;background-color: #f5f8fa;border-top: 1px solid #d3e0e9;border-left: 1px solid #d3e0e9;border-right: 1px solid #d3e0e9;border-bottom: 1px solid #d3e0e9;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border-top-right-radius: 2px;border-top-left-radius: 2px;">

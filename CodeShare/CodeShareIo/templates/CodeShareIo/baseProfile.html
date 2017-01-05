@@ -34,7 +34,123 @@
     <link rel='stylesheet' id='uncode-icons-css' href='{% static 'CodeShareIo/font-awesome-4.6.3/css/font-awesome.min.css' %}' type='text/css' media='all' />
     <link rel='stylesheet' id='uncodefont-google-css' href='https://fonts.googleapis.com/css?family=Poppins%3A300%2Cregular%2C500%2C600%2C700%7CHind%3A300%2Cregular%2C500%2C600%2C700%7CDroid+Serif%3Aregular%2Citalic%2C700%2C700italic%7CDosis%3A200%2C300%2Cregular%2C500%2C600%2C700%2C800%7CPlayfair+Display%3Aregular%2Citalic%2C700%2C700italic%2C900%2C900italic%7COswald%3A300%2Cregular%2C700%7CRoboto%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic%7CSource+Sans+Pro%3A200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C900%2C900italic&#038;subset=devanagari%2Clatin-ext%2Clatin%2Ccyrillic%2Cvietnamese%2Cgreek%2Ccyrillic-ext%2Cgreek-ext&#038;ver=1.0.0' type='text/css' media='all' />
     <link rel="stylesheet" href="{% static 'CodeShareIo/css2/style115.css' %}">
-    <style type="text/css">html, body {max-width: 100%;overflow-x: hidden;</style>
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+      <style type="text/css">html, body {max-width: 100%;overflow-x: hidden;}
+.article_page .article_container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: block;
+  max-width: 660px;
+  font-size: 17.1px;
+  line-height: 26px;
+}
+
+@media screen and (max-width: 660px) {
+  .article_page .article_container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 961px) {
+  .article_page .content_col {
+    min-width: 640px;
+  }
+}
+.article_page.has_sidenav .article_container {
+  display: table;
+  width: 100%;
+  max-width: 960px;
+}
+@media (max-width: 800px) {
+  .article_page.has_sidenav .article_container {
+    display: block;
+  }
+}
+.article_page.has_sidenav .article_container .content_col {
+  display: table-cell;
+}
+@media (max-width: 800px) {
+  .article_page.has_sidenav .article_container .content_col {
+    display: block;
+  }
+}
+
+.article_body .tabs {
+  margin-bottom: 16px;
+}
+.article_body .tabs.enclosed section {
+  border: 1px solid #E8E8E8;
+  border-radius: 6px;
+}
+.article_body .tabs.enclosed section.first_content {
+  border-top-left-radius: 0px;
+}
+.article_body .option {
+  margin: 0px;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0);
+  padding: 5px 30px 4px 30px;
+  color: #a0a0a2;
+}
+.article_body .option.active {
+  color: #3aa3e3;
+  border: 1px solid #E8E8E8;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: 1px solid #FFFFFF;
+}
+.article_body .option:not(.active):hover {
+  color: #88919B;
+}
+@media screen and (max-width: 560px) {
+  .article_body .option {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .article_body .option {
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 0.9rem;
+  }
+}
+.article_body section {
+  display: none;
+  border-top: 1px solid #E8E8E8;
+  padding-top: 16px;
+  margin-top: -1px;
+  padding: 30px;
+}
+.article_body section ol:first-child,
+.article_body section ul:first-child {
+  margin-top: 0px;
+}
+.article_body section ol:last-child,
+.article_body section ul:last-child {
+  margin-bottom: 0px;
+}
+.article_body section ol li:last-child,
+.article_body section ul li:last-child {
+  margin-bottom: 0px;
+}
+.article_body section.active {
+  display: block;
+}
+.article_body section p:last-child {
+  margin-bottom: 0px;
+}
+
+
+
+
+</style>
 
     <!-- JS -->
     <script type='text/javascript' src='{% static 'CodeShareIo/js2/jquery.js' %}'></script>
@@ -43,7 +159,6 @@
     <script type="text/javascript" src="{% static 'CodeShareIo/js2/rollup-landing.js' %}"></script>
 
     <script src="{% static 'CodeShareIo/js2/minify.js' %}"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js2/bootstrap.min.js"></script> -->
   </head>
   <body class="page page-id-4935 page-child parent-pageid-43938 page-template-default  style-color-wayh-bg group-blog smooth-scroller hmenu hmenu-position-right header-full-width main-center-align menu-mobile-animated wpb-js-composer js-comp-ver-4.12.1 vc_responsive scroll" style="outline:none;" id="body">
   {% block left %}
@@ -78,7 +193,7 @@
                         <div class="nav navbar-nav navbar-main navbar-nav-first">
                           <ul id="menu-menu-creative-artist" class="menu-primary-inner menu-smart sm">
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42967 menu-item-link"><a href="{% url 'CodeShareIo:index' %}">Home</a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42968 menu-item-link"><a href="index.html">Profile</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42968 menu-item-link"><a href="{% url 'CodeShareIo:profile' user.username %}">Profile</a></li>
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42969 menu-item-link"><a data-toggle="modal" href="#msgModal">Messages</a></li>
                             {% if user.is_staff == True %}<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42969 menu-item-link"><a href="http://127.0.0.1:8000/admin/">Admin</a></li>{% endif %}
                           </ul>
@@ -96,6 +211,7 @@
                             </li>
                           </ul>
                           <ul class="nav navbar-nav navbar-nav hidden">
+                            <li><h5 style="text-align: center">{{ request.user.first_name }}</h5></li>
                             <li><a href="{% url 'CodeShareIo:profile' request.user.username %}" style="color: #1b1d1f">Profile</a></li>
                             <li><a href="{% url 'CodeShareIo:logout' %}" style="color: #1b1d1f">Logout</a></li>
                           </ul>
@@ -505,6 +621,7 @@
     </div>
   </div>
 </div>
+
 <!-- ========================================= END NOTIFICATIONS POPUP ================================================== -->
 
   {% endblock %}
@@ -538,16 +655,15 @@
         <div class="qw">
         <h5 class="ald">Who to follow <small>· <a href="#">View All</a></small></h5>
         <ul class="qo anx">
-            {% for item in items %}
-                {% if item.username != user.username and item.username != request.user.username %}
+                {% if user.username != request.user.username %}
           <li class="qf alm">
             <a class="qj" href="#">
               <img
                 class="qh cu"
-                src="{{ item.users.user_profile_picture.url }}">
+                src="{{ user.users.user_profile_picture.url }}">
             </a>
             <div class="qg">
-              <strong><a href="#" style="color: #000;">{{ item.first_name }}</a> · </strong><span href="#"><a href="#"> {{ item.username }}</a></span>
+              <strong><a href="#" style="color: #000;">{{ user.first_name }}</a> · </strong><span href="#"><a href="#"> {{ user.username }}</a></span>
               <div class="aoa">
                 <button class="cg ts fx">
                   <span class="h vc"></span> Follow</button>
@@ -555,7 +671,6 @@
             </div>
           </li>
                 {% endif %}
-        {% endfor %}
         </ul>
         </div>
         <div class="qz">
@@ -602,7 +717,7 @@
   {% endblock %}
 
 {% block footer %}
-    <script src="{% static 'CodeShareIo/feed.js'%}"></script>
+    <script src="{% static 'CodeShareIo/feed.js' %}"></script>
     <script src="{% static 'CodeShareIo/js/chart.js' %}"></script>
     <script src="{% static 'CodeShareIo/js/toolkit.js' %}"></script>
     <script src="{% static 'CodeShareIo/js/application.js' %}"></script>
@@ -622,8 +737,20 @@
 
     <script type='text/javascript' src="{% static 'CodeShareIo/js2/index115.js' %}"></script>
     <script type='text/javascript' src="{% static 'CodeShareIo/js2/bootstrap.js' %}"></script>
-    <script src="{% static 'CodeShareIo/js/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script src="https://p6.zdassets.com/hc/theme_assets/138842/200037786/slack.zendesk-min.js?nov9_1"></script>
+    <script>              $('button.dropdown.mega-dropdown').on('click', function (event) {
+    $(this).parent().toggleClass("open");
+});
 
+$('body').on('click', function (e) {
+    if (!$('button.dropdown.mega-dropdown').is(e.target) && $('button.dropdown.mega-dropdown').has(e.target).length === 0 && $('.open').has(e.target).length === 0) {
+        $('button.dropdown.mega-dropdown').removeClass('open');
+    }
+});
+    console.log("bodie clicked")
+    </script>
+        <script src="{% static 'CodeShareIo/js/bootstrap.min.js' %}"></script>
 {% endblock %}
   </body>
 </html>
