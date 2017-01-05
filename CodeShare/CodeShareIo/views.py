@@ -1,11 +1,13 @@
 from django.views import generic
-from models import Users, Post
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout as auth_logout
 from django.views.generic import View
 from forms import UserForm
 from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
+from django.views.generic.edit import UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
+from CodeShareIo.models import Users, Post
 
 
 class IndexView(generic.ListView):
@@ -18,6 +20,7 @@ class IndexView(generic.ListView):
 
 class ProfileView(generic.DetailView):
     model = User
+    model2 = Post
     template_name = 'CodeShareIo/userProfile.html'
     slug_field = "username"
 
@@ -28,6 +31,7 @@ class FeedView(View):
     template_name = 'CodeShareIo/feed.html'
     # display blank form
     post = user_post
+
     def get_queryset(self):
         return self.post
 
@@ -40,6 +44,31 @@ class FeedView(View):
             return render(request, self.template_name, {'items': items, 'post': self.post, 'num_of_post': num_of_post})
 
 
+class PostDelete(DeleteView):
+    model = Post
+    success_url = reverse_lazy('CodeShareIo:feed')
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+
+class PostDeleteProfile(DeleteView):
+    model = Post
+    success_url = reverse_lazy('CodeShareIo:profile')
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+
+class UpdateProfile(UpdateView):
+    model = User
+    success_url = reverse_lazy('CodeShareIo:feed')
+    user = User.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        return self.user(request, *args, **kwargs)
+
+
 class MobileApplicationView(generic.ListView):
     template_name = 'CodeShareIo/mobile.html'
 
@@ -47,11 +76,72 @@ class MobileApplicationView(generic.ListView):
         return Users.objects.all()
 
 
-class ResetPasswordView(generic.ListView):
+class ResetPasswordView(View):
     template_name = 'CodeShareIo/resetPassword.html'
+    context_object_name = 'user'
 
-    def get_queryset(self):
-        return Users.objects.all()
+    def get(self, request):
+        return render(request, self.template_name)
+
+    # Process form data
+
+    def post(self, request):
+
+        if request.method == 'POST':
+            email = request.POST['email']
+
+            # returns User objects if credentials are correct
+            if email == '':
+                error_message = "The username or password is incorrect"
+                return render(request, self.template_name, {error_message: 'error'})
+
+            if email != '':
+                print email
+                user = User.objects.get(email=email)
+                print email
+                print "User to reset : ", user
+                if user is not None:
+                    print "Not None"
+                    if user.is_active:
+                        # send email to this user for reset
+                        return render(request, 'CodeShareIo/reset.html', {email: 'username'})
+                else:
+                    return render(request, self.template_name)
+
+
+class ResetView(View):
+
+    form_class = UserForm
+    template_name = 'CodeShareIo/reset.html'
+
+    # display blank form
+    def get(self, request):
+        if request.user.is_authenticated():
+            auth_logout(request)
+        return render(request, self.template_name)
+
+    # Process form data
+    def post(self, request):
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['password']
+            repeatpassword = request.POST['repeatePassword']
+
+            if username == '' or password == '' or repeatpassword == '':
+                error_message = "The username or password is incorrect"
+                return render(request, self.template_name, {error_message: 'error'})
+
+            if username != '' and password == repeatpassword:
+                user = User.objects.get(username=username)
+                if user is not None:
+                    print "Not None"
+                    if user.is_active:
+                        print "Active"
+                        user.set_password(password)
+                        user.save()
+                    return redirect('CodeShareIo:login')
+                else:
+                    return render(request, self.template_name)
 
 
 class UserFormView(View):
@@ -69,8 +159,8 @@ class UserFormView(View):
     # Process form data
     def post(self, request):
         if request.method == 'POST':
-            data_profile = request.POST['profilePicture']
-            data_banner = request.POST['profileBanner']
+            data_profile = request.FILES['profilePicture']
+            data_banner = request.FILES['profileBanner']
             data_phone = request.POST['mobileNumber']
             data_birth = request.POST['date']
             data_country = request.POST['country']
@@ -112,9 +202,6 @@ class LoginView(View):
     template_name = 'CodeShareIo/login.html'
     context_object_name = 'user'
 
-    def get_queryset(self):
-        return Users.objects.all()
-
     # display blank form
     def get(self, request):
 
@@ -133,7 +220,7 @@ class LoginView(View):
 
             # returns User objects if credentials are correct
             if username == '' or password == '':
-                error_message = 'error'
+                error_message = "The username or password is incorrect"
                 return render(request, self.template_name, {error_message: 'error'})
 
             if username != '' and password != '':
@@ -146,7 +233,7 @@ class LoginView(View):
                 return render(request, self.template_name, {user: 'user'})
 
 
-def PostChat(request):
+def postchat(request):
     if request.method == "POST":
         msg = request.POST.get('msgbox', None)
         c = Post(user=request.user, content=msg)
@@ -156,20 +243,30 @@ def PostChat(request):
     else:
         return HttpResponse('Request must be POST.')
 
-def MessagesChat(request):
+
+def messageschat(request):
     c = Post.objects.all().order_by('-pub_date')
     return render(request, 'CodeShareIo/messagesChat.html', {'chat': c})
 
 
-def FeedConnectedUser(request):
+def profileview(request):
     u = None
     if request.method == 'POST':
         u = request.POST.get('user1')
 
-    print "*******************************", u
+    print "Method : Profieview", "\n", "Viewing the profile of : ", u
 
-    user = User.objects.filter(username="@admin")
+    user = User.objects.filter(username=u)
     print "user : ", user
-    c = Post.objects.all().filter(user=user)
-    return render(request, 'CodeShareIo/lolz.html', {'chat': c})
+    c = Post.objects.all().filter(user=user).order_by('-pub_date')
+    numPost = Post.objects.filter(user=user).count()
+    return render(request, 'CodeShareIo/userFeed.html', {'chat': c, 'numPost': numPost})
 
+
+def basefeed(request):
+    if request.method == 'GET':
+        template_name = 'CodeShareIo/baseFeed.html'
+        a = User.objects.all()
+        b = Post.objects.all()
+        print "********************************************"
+        return render(request, template_name, {'userP': a, 'postP': b})
