@@ -1,8 +1,14 @@
 
-    var currentLocation = window.location.href; console.log(currentLocation)
-    var values = currentLocation.split('/');
-    var username = values[5];
-    console.log(username);
+var currentLocation = window.location.href; console.log(currentLocation)
+var values = currentLocation.split('/');
+var username = values[5];
+var requester = getRequester();
+
+console.log(username);
+console.log(requester);
+ $(document).ready(function(){
+
+});
 
 
 $('#chat-form').on('submit', function(event){
@@ -29,17 +35,7 @@ $('#chat-form').on('submit', function(event){
 
 function getMessages(){
     if (!scrolling) {
-        $.get('/CodeShareIo/FeedChat/', function(messages){
-            $('#msg-list').html(messages);
-            var chatlist = document.getElementById('msg-list-div');
-            chatlist.scrollTop = chatlist.scrollHeight;
-        });
 
-    }
-    scrolling = false;
-}
-
-var scrolling = false;
         $.ajax({
             url : '/CodeShareIo/FeedChat/',
             type : 'POST',
@@ -48,22 +44,40 @@ var scrolling = false;
                 'csrfmiddlewaretoken' : getCookie('csrftoken')
             },
 
-            success : function(){
-                console.log("Success : XXXX" + username)
+            success : function(messages){
+                $('#msg-list').html(messages);
+                var chatlist = document.getElementById('msg-list-div');
+                chatlist.scrollTop = chatlist.scrollHeight;
+                if(username == requester){
+                    console.log("viewing your own profile");
+                    $('li#del').show();
+                    $('li#edit').show();
+                    }
+                    else{
+                        $('li#del').hide();
+                        $('li#edit').hide();
+                        console.log("error");
+                    }
             }
         });
+        scrolling = false;
+    }
+}
+
+var scrolling = false;
+
 $(document).ready(function() {
-     $('#send').attr('disabled','disabled');
-     getMessages();
-     $('#chat-msg').keyup(function() {
+    $('#send').attr('disabled','disabled');
+    getMessages();
+    $('#chat-msg').keyup(function() {
         if($(this).val() != '') {
-           $('#send').removeAttr('disabled');
+            $('#send').removeAttr('disabled');
         }
         else {
-        $('#send').attr('disabled','disabled');
+            $('#send').attr('disabled','disabled');
         }
-     });
- });
+    });
+});
 
 function getCookie(name) {
     var cookieValue = null;

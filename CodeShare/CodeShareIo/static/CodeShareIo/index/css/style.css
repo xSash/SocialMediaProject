@@ -3008,12 +3008,8 @@ input[type="text"]:focus, input[type="email"]:focus {
 #main-nav ul.right {
     text-align: right;
 }
-#main-nav .logo {
-    font-size: xx-large;
-    display: inline-block;
-    padding-top: 12px;
-    padding-right: 100px;
-    text-decoration: none;
+#main-nav ul.center {
+    text-align: center;
 }
 #main-nav #slide_out_menu {
     position: fixed;
